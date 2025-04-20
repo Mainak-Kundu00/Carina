@@ -10,3 +10,4 @@ $routes->get('about', 'Home::about');
 $routes->get('rings', 'Home::rings');
 $routes->get('necklaces', 'Home::necklaces');
 $routes->get('jewelry', 'Home::jewelry');
+$routes->get('sign_up', 'Home::sign_up');

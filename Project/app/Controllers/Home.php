@@ -24,4 +24,8 @@ class Home extends BaseController
     {
         return view('jewelry');
     }
+    public function sign_up()
+    {
+        return view('sign_up');
+    }
 }
