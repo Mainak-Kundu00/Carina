@@ -76,7 +76,7 @@
                 <button class="w-full bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700">Sign Up</button>
 
                 <p class="text-center text-sm text-gray-600 mt-2">
-                    Already have an account? <a href="sign-in.html" class="text-blue-500">Sign in</a>
+                    Already have an account? <a href="<?= base_url('sign_in'); ?>" class="text-blue-500">Sign in</a>
                 </p>
             </div>
         </form>

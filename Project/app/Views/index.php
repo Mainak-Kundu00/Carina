@@ -53,10 +53,10 @@
 
 <!-- Mobile Dropdown Menu -->
 <ul id="mobile-menu" class="hidden fixed top-16 left-0 bg-white w-full shadow-md flex-col space-y-4 p-4 md:hidden z-50">
-    <li><a href="rings.html" class="hover:text-pink-500">Rings</a></li>
-    <li><a href="necklaces.html" class="hover:text-pink-500">Necklaces</a></li>
-    <li><a href="jewelry-set.html" class="hover:text-pink-500">Jewelry Set</a></li>
-    <li><a href="about.html" class="hover:text-pink-500">About Us</a></li>
+    <li><a href="<?= base_url('rings'); ?>" class="hover:text-pink-500">Rings</a></li>
+    <li><a href="<?= base_url('necklaces'); ?>" class="hover:text-pink-500">Necklaces</a></li>
+    <li><a href="<?= base_url('jewelry'); ?>" class="hover:text-pink-500">Jewelry Set</a></li>
+    <li><a href="<?= base_url('about'); ?>" class="hover:text-pink-500">About Us</a></li>
 </ul>
 
 
