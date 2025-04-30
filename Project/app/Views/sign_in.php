@@ -36,7 +36,7 @@
                 <button class="w-full bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700">Log in</button>
 
                 <p class="text-center text-sm text-gray-600 mt-2">
-                    Not a member yet? <a href="sign-up.html" class="text-blue-500">Create account now</a>
+                    Not a member yet? <a href="<?= base_url('sign_up'); ?>" class="text-blue-500">Create account now</a>
                 </p>
             </div>
         </form>
