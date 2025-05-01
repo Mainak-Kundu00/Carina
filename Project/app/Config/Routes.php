@@ -13,4 +13,7 @@ $routes->get('jewelry', 'Home::jewelry');
 $routes->get('sign_up', 'Home::sign_up');
 $routes->get('sign_in', 'Home::sign_in');
 $routes->get('cart', 'Home::cart');
+$routes->get('shop_now', 'Home::shop_now');
+$routes->get('shop_now', 'Home::shop_now');
+$routes->get('our_policy', 'Home::policy');
 $routes->get('DbTest', 'DbTest::index');

@@ -75,39 +75,34 @@
     <!-- Hero Section -->
     <section class="relative w-full h-[400px] bg-cover bg-center flex flex-col justify-center items-center text-center" style="background-image: url('background.jpg');">
         <h1 class="text-5xl text-white font-bold drop-shadow-lg">Elegant Jewelry for Every Occasion</h1>
+        <a href="<?= base_url('shop_now'); ?>">
         <button class="mt-4 bg-pink-500 text-white px-6 py-2 rounded-full hover:bg-pink-600 transition duration-300">Shop Now</button>
+        </a>
     </section>
 
     <!-- Product Section -->
     <div class="text-center my-10">
-        <h2 class="text-3xl font-bold">Products</h2>
+        <h2 class="text-5xl font-bold">Products</h2>
         <p class="text-gray-600">Discover our latest collection</p>
     </div>
 
     <div id="product-list" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 px-10 mb-16">
         <div class="bg-white p-4 shadow-md rounded-lg flex flex-col items-center text-center transition-transform transform hover:scale-105 hover:shadow-lg duration-300">
             <img src="jhumka.jpeg" class="w-full h-72 object-cover rounded-md">
-            <h3 class="font-bold mt-2 hover:text-pink-500 transition-colors duration-300">Jhumka</h3>
-            <p class="text-lg font-semibold">₹230</p>
-            <p class="text-sm text-gray-500">126 items sold</p>
+            <h3 class="font-bold mt-5 text-2xl hover:text-pink-500 transition-colors duration-300">Jhumka</h3>
         </div>
         <div class="bg-white p-4 shadow-md rounded-lg flex flex-col items-center text-center transition-transform transform hover:scale-105 hover:shadow-lg duration-300">
             <img src="chain.JPG" class="w-full h-72 object-cover rounded-md">
-            <h3 class="font-bold mt-2 hover:text-pink-500 transition-colors duration-300">Chain</h3>
-            <p class="text-lg font-semibold">₹190</p>
-            <p class="text-sm text-gray-500">243 items sold</p>
+            <h3 class="font-bold mt-5 text-2xl hover:text-pink-500 transition-colors duration-300">Chain</h3>
         </div>
         <div class="bg-white p-4 shadow-md rounded-lg flex flex-col items-center text-center transition-transform transform hover:scale-105 hover:shadow-lg duration-300">
             <img src="kaner.JPG" class="w-full h-72 object-cover rounded-md">
-            <h3 class="font-bold mt-2 hover:text-pink-500 transition-colors duration-300">Classic Top</h3>
-            <p class="text-lg font-semibold">₹150</p>
-            <p class="text-sm text-gray-500">199 items sold</p>
+            <h3 class="font-bold mt-5 text-2xl hover:text-pink-500 transition-colors duration-300">Classic Top</h3>
         </div>
     </div>
     
     <!-- Footer -->
-
-        <footer class="bg-gray-900 text-white p-8 mt-auto">
+<footer class="bg-gray-900 text-white p-8 mt-auto">
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 text-center md:text-left">
                 <div>
                     <h3 class="font-bold mb-2">
@@ -117,25 +112,25 @@
                 <div>
                     <h3 class="font-bold mb-2">Our Policy</h3>
                     <ul class="space-y-1">
-                        <li><a href="#" class="hover:text-gray-400">Refunds</a></li>
-                        <li><a href="#" class="hover:text-gray-400">COD</a></li>
-                        <li><a href="#" class="hover:text-gray-400">Return & Exchange</a></li>
-                    </ul>
+                        <li><a href="<?= base_url('our_policy'); ?>" class="hover:text-gray-400">Refunds</a></li>
+                        <li><a href="<?= base_url('our_policy'); ?>" class="hover:text-gray-400">COD</a></li>
+                        <li><a href="<?= base_url('our_policy'); ?>" class="hover:text-gray-400">Return & Exchange</a></li>
+                      </ul>
                 </div>
                 <div>
                     <h3 class="font-bold mb-2">Contact Us</h3>
                     <p class="text-sm">Email: support@Carina.com</p>
-                    <p class="text-sm">Phone: +123 456 7890</p>
+                    <p class="text-sm">Phone: +91 62896 34086</p>
                 </div>
                 <div>
                     <h3 class="font-bold mb-2">Address</h3>
-                    <p class="text-sm">123 Jewelry St, NY, USA</p>
+                    <p class="text-sm"> 129, Belilious Rd, Howrah, India</p>
                 </div>
             </div>
             <div class="text-center text-sm text-gray-400 mt-6 border-t border-gray-700 pt-4">
                 &copy; 2025 Carina Jewelry. All rights reserved.
             </div>
-        </footer>
+</footer>
     
     <!--Search Bar Functionality-->
     <script>

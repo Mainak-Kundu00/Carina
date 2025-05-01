@@ -36,4 +36,12 @@ class Home extends BaseController
     {
         return view('cart');
     }
+    public function shop_now()
+    {
+        return view('shop_now');
+    }
+    public function policy() {
+        return view('our_policy');
+    }
+
 }
