@@ -12,3 +12,5 @@ $routes->get('necklaces', 'Home::necklaces');
 $routes->get('jewelry', 'Home::jewelry');
 $routes->get('sign_up', 'Home::sign_up');
 $routes->get('sign_in', 'Home::sign_in');
+$routes->get('cart', 'Home::cart');
+$routes->get('DbTest', 'DbTest::index');

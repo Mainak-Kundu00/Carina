@@ -42,9 +42,11 @@
     
     <!-- Cart and Sign-Up -->
     <div class="flex space-x-4 items-center">
+        <a href="<?= base_url('cart'); ?>">
         <button class="text-gray-700 hover:text-gray-900">
             <img src="shopping-cart.png" alt="Cart" class="h-6 w-6">
         </button>
+    </a>
         <a href="<?= base_url('sign_up'); ?>">
             <button class="bg-blue-500 text-white px-4 py-2 rounded-md">Sign Up</button>
         </a>

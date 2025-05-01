@@ -32,4 +32,8 @@ class Home extends BaseController
     {
         return view('sign_in');
     }
+    public function cart()
+    {
+        return view('cart');
+    }
 }
