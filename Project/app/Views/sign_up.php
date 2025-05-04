@@ -69,8 +69,8 @@
                 </div>
 
                 <div class="flex items-center">
-                    <input type="checkbox" id="terms" class="mr-2">
-                    <label for="terms" class="text-sm text-gray-600">I agree with Terms & Conditions</label>
+                 <input type="checkbox" id="terms" class="mr-2">
+                 <label for="terms" class="text-sm text-gray-600">I agree with <a href="<?= base_url('terms'); ?>" class="text-blue-500 text-sm">Terms & Conditions</a></label>
                 </div>
 
                 <button class="w-full bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700">Sign Up</button>
