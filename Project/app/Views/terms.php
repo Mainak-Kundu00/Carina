@@ -20,33 +20,33 @@
     
         <!-- Desktop Menu -->
     <ul class="hidden md:flex space-x-6 text-gray-700">
-        <li><a href="index.html" class="hover:text-gray-900">Home</a></li>
-        <li><a href="rings.html" class="hover:text-gray-900">Rings</a></li>
-        <li><a href="necklaces.html" class="hover:text-gray-900">Necklaces</a></li>
-        <li><a href="jewelry-set.html" class="hover:text-gray-900">Jewelry Set</a></li>
-        <li><a href="about.html" class="hover:text-gray-900">About Us</a></li>
+      <li><a href="<?= base_url('/'); ?>" class="hover:text-gray-900">Home</a></li>
+        <li><a href="<?= base_url('rings'); ?>" class="hover:text-gray-900">Rings</a></li>
+        <li><a href="<?= base_url('necklaces'); ?>" class="hover:text-gray-900">Necklaces</a></li>
+        <li><a href="<?= base_url('jewelry'); ?>" class="hover:text-gray-900">Jewelry Set</a></li>
+        <li><a href="<?= base_url('about'); ?>" class="hover:text-gray-900">About Us</a></li>
     </ul>
 
         <!-- Cart and Sign-Up -->
         <div class="flex space-x-4 items-center">
-            <a href="cart.html">
-            <button class="text-gray-700 hover:text-gray-900">
-                <img src="shopping-cart.png" alt="Cart" class="h-6 w-6">
-            </button>
+          <a href="<?= base_url('cart'); ?>">
+        <button class="text-gray-700 hover:text-gray-900">
+            <img src="shopping-cart.png" alt="Cart" class="h-6 w-6">
+        </button>
+    </a>
+         <a href="<?= base_url('sign_up'); ?>">
+            <button class="bg-blue-500 text-white px-4 py-2 rounded-md">Sign Up</button>
         </a>
-            <a href="sign-up.html">
-                <button class="bg-blue-500 text-white px-4 py-2 rounded-md">Sign Up</button>
-            </a>
         </div>
     </nav>
     
   <!-- Mobile Dropdown Menu -->
 <ul id="mobile-menu" class="hidden fixed top-16 left-0 bg-white w-full shadow-md flex-col space-y-4 p-4 md:hidden z-50">
-    <li><a href="index.html" class="hover:text-pink-500">Home</a></li>
-    <li><a href="rings.html" class="hover:text-pink-500">Rings</a></li>
-    <li><a href="necklaces.html" class="hover:text-pink-500">Necklaces</a></li>
-    <li><a href="jewelry-set.html" class="hover:text-pink-500">Jewelry Set</a></li>
-    <li><a href="about.html" class="hover:text-pink-500">About Us</a></li>
+  <li><a href="<?= base_url('/'); ?>" class="hover:text-pink-500">Home</a></li>
+    <li><a href="<?= base_url('rings'); ?>" class="hover:text-pink-500">Rings</a></li>
+    <li><a href="<?= base_url('necklaces'); ?>" class="hover:text-pink-500">Necklaces</a></li>
+    <li><a href="<?= base_url('jewelry'); ?>" class="hover:text-pink-500">Jewelry Set</a></li>
+    <li><a href="<?= base_url('about'); ?>" class="hover:text-pink-500">About Us</a></li>
 </ul>
   
 
