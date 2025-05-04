@@ -43,5 +43,8 @@ class Home extends BaseController
     public function policy() {
         return view('our_policy');
     }
+    public function terms() {
+        return view('terms');
+    }
 
 }
