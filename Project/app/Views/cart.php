@@ -69,9 +69,7 @@
                 <td>$52</td>
                 <td>
                   <div class="flex items-center gap-2">
-                    <button class="px-2 bg-gray-300 rounded">-</button>
                     <span>2</span>
-                    <button class="px-2 bg-indigo-500 text-white rounded">+</button>
                   </div>
                 </td>
                 <td>$52</td>
@@ -82,9 +80,7 @@
                 <td>$52</td>
                 <td>
                   <div class="flex items-center gap-2">
-                    <button class="px-2 bg-gray-300 rounded">-</button>
-                    <span>2</span>
-                    <button class="px-2 bg-indigo-500 text-white rounded">+</button>
+                    <span >2</span>
                   </div>
                 </td>
                 <td>$92</td>
@@ -95,9 +91,7 @@
                 <td>$12</td>
                 <td>
                   <div class="flex items-center gap-2">
-                    <button class="px-2 bg-gray-300 rounded">-</button>
                     <span>2</span>
-                    <button class="px-2 bg-indigo-500 text-white rounded">+</button>
                   </div>
                 </td>
                 <td>$36</td>

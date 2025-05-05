@@ -17,6 +17,8 @@ $routes->get('shop_now', 'Home::shop_now');
 $routes->get('shop_now', 'Home::shop_now');
 $routes->get('our_policy', 'Home::policy');
 $routes->get('terms', 'Home::terms');
+$routes->get('quantity', 'Home::quantity');
+
 
 
 $routes->get('dbtest', 'DbTest::index');

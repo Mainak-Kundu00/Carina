@@ -46,5 +46,7 @@ class Home extends BaseController
     public function terms() {
         return view('terms');
     }
-
+    public function quantity() {
+        return view('quantity');
+    }
 }
