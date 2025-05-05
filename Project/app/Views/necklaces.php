@@ -73,40 +73,48 @@
         <div class="bg-white rounded-lg shadow-md overflow-hidden transform transition duration-300 hover:scale-105">
             <img src="silver-necklace.jpg" alt="Royal Diamond Ring" class="w-full h-48 object-cover">
             <div class="p-4">
-                <p class="text-sm text-white bg-gray-500 rounded-full px-3 py-1 uppercase inline-block">Category</p>
+                <p class="text-sm text-white bg-gray-500 rounded-full px-3 py-1 uppercase inline-block">Necklace</p>
                 <h3 class="text-lg font-semibold mt-2">Elegant silver</h3>
-                <p class="text-gray-600 text-sm">Timeless silver craftsmanship.</p>
-                <button class="mt-2 bg-purple-600 text-white px-4 py-2 rounded hover:bg-purple-700 hover:shadow-lg">Buy Now</button>
-            </div>
+                <p class="text-gray-600 text-sm">₹10,299</p>
+                <a href="<?= base_url('quantity')?>"> 
+                    <button class="mt-2 bg-purple-600 text-white px-4 py-2 rounded hover:bg-purple-700 hover:shadow-lg">Add to cart</button>
+                </a>
+            </div>          
         </div>
         
         <div class="bg-white rounded-lg shadow-md overflow-hidden transform transition duration-300 hover:scale-105">
             <img src="gold-necklace.jpeg" alt="Ethenic Gold Ring" class="w-full h-48 object-cover">
             <div class="p-4">
-                <p class="text-sm text-white bg-gray-500 rounded-full px-3 py-1 uppercase inline-block">Category</p>
+                <p class="text-sm text-white bg-gray-500 rounded-full px-3 py-1 uppercase inline-block">Necklace</p>
                 <h3 class="text-lg font-semibold mt-2">Stylish Gold</h3>
-                <p class="text-gray-600 text-sm">Royal and sharp gold design.</p>
-                <button class="mt-2 bg-purple-600 text-white px-4 py-2 rounded hover:bg-purple-700 hover:shadow-lg">Buy Now</button>
+                <p class="text-gray-600 text-sm">₹18,999</p>
+                <a href="<?= base_url('quantity')?>"> 
+                    <button class="mt-2 bg-purple-600 text-white px-4 py-2 rounded hover:bg-purple-700 hover:shadow-lg">Add to cart</button>
+                </a>
             </div>
         </div>
         
         <div class="bg-white rounded-lg shadow-md overflow-hidden transform transition duration-300 hover:scale-105">
             <img src="diamond-necklace.jpg" alt="Classic diamond-necklace" class="w-full h-48 object-cover">
             <div class="p-4">
-                <p class="text-sm text-white bg-gray-500 rounded-full px-3 py-1 uppercase inline-block">Category</p>
+                <p class="text-sm text-white bg-gray-500 rounded-full px-3 py-1 uppercase inline-block">Necklace</p>
                 <h3 class="text-lg font-semibold mt-2">Premium Diamond</h3>
-                <p class="text-gray-600 text-sm">Unmatched royalty and elegance.</p>
-                <button class="mt-2 bg-purple-600 text-white px-4 py-2 rounded hover:bg-purple-700 hover:shadow-lg">Buy Now</button>
+                <p class="text-gray-600 text-sm">₹15,999</p>
+                <a href="<?= base_url('quantity')?>"> 
+                    <button class="mt-2 bg-purple-600 text-white px-4 py-2 rounded hover:bg-purple-700 hover:shadow-lg">Add to cart</button>
+                </a>
             </div>
         </div>
         
         <div class="bg-white rounded-lg shadow-md overflow-hidden transform transition duration-300 hover:scale-105">
             <img src="platinum-necklace.jpeg" alt="Elegant Platinum necklace" class="w-full h-48 object-cover">
             <div class="p-4">
-                <p class="text-sm text-white bg-gray-500 rounded-full px-3 py-1 uppercase inline-block">Category</p>
+                <p class="text-sm text-white bg-gray-500 rounded-full px-3 py-1 uppercase inline-block">Necklace</p>
                 <h3 class="text-lg font-semibold mt-2">Mighty Platinum</h3>
-                <p class="text-gray-600 text-sm">Sleek, modern Platinum design.</p>
-                <button class="mt-2 bg-purple-600 text-white px-4 py-2 rounded hover:bg-purple-700 hover:shadow-lg">Buy Now</button>
+                <p class="text-gray-600 text-sm">₹21,000</p>
+                <a href="<?= base_url('quantity')?>"> 
+                    <button class="mt-2 bg-purple-600 text-white px-4 py-2 rounded hover:bg-purple-700 hover:shadow-lg">Add to cart</button>
+                </a>
             </div>
         </div>
     </section>
