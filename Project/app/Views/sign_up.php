@@ -14,19 +14,21 @@
             <img src="logo.jpg" alt="Logo" class="h-12">
         </div>
 
-        <form>
+        <?=form_open('');?>
             <div class="space-y-4">
                 <div class="relative">
                     <span class="absolute left-3 top-3 text-gray-400">👤</span>
-                    <input type="text" placeholder="Full Name" class="w-full px-10 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400">
+                    <input type="text" name="name" placeholder="Full Name" class="w-full px-10 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400">
                 </div>
 
                 <div class="relative">
                     <span class="absolute left-3 top-3 text-gray-400">⚤</span>
-                    <select class="w-full px-10 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400">
-                        <option>Male</option>
-                        <option>Female</option>
-                        <option>Other</option>
+                    <select name="gender" class="w-full px-10 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400">
+                     <?php 
+                     $gender=array("Male","Female","Other");
+                     foreach($gender as $g): ?>   
+                        <option><?= $g?></option>
+                        <?php endforeach?>
                     </select>
                 </div>
 
@@ -34,27 +36,27 @@
                 <div class="relative flex items-center border rounded-md px-4 py-2 bg-gray-100">
                     <span class="text-gray-400 mr-2">📅</span>
                     <label class="text-gray-500 mr-2">Date of Birth:</label>
-                    <input type="date" class="flex-1 bg-transparent focus:outline-none cursor-pointer">
+                    <input type="date" name="dob" class="flex-1 bg-transparent focus:outline-none cursor-pointer">
                 </div>
 
                 <div class="relative">
                     <span class="absolute left-3 top-3 text-gray-400">📍</span>
-                    <input type="text" placeholder="Address" class="w-full px-10 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400">
+                    <input type="text" name="address" placeholder="Address" class="w-full px-10 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400">
                 </div>
 
                 <div class="relative">
                     <span class="absolute left-3 top-3 text-gray-400">📧</span>
-                    <input type="email" placeholder="Email" class="w-full px-10 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400">
+                    <input type="email" name="email" placeholder="Email" class="w-full px-10 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400">
                 </div>
 
                 <div class="relative">
                     <span class="absolute left-3 top-3 text-gray-400">📞</span>
-                    <input type="tel" placeholder="Phone Number" class="w-full px-10 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400">
+                    <input type="tel" name="ph_no" placeholder="Phone Number" class="w-full px-10 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400">
                 </div>
 
                 <div class="relative">
                     <span class="absolute left-3 top-3 text-gray-400">🔒</span>
-                    <input type="password" placeholder="Password" id="password" class="w-full px-10 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400">
+                    <input type="password" name="password" placeholder="Password" id="password" class="w-full px-10 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400">
                     <button type="button" onclick="togglePassword('password', 'toggleIcon1')" class="absolute right-3 top-2 text-gray-500">
                         <span id="toggleIcon1">🙈</span>
                     </button>
@@ -79,7 +81,7 @@
                     Already have an account? <a href="<?= base_url('sign_in'); ?>" class="text-blue-500">Sign in</a>
                 </p>
             </div>
-        </form>
+        <?= form_close()?>
     </div>
 
     <script>
