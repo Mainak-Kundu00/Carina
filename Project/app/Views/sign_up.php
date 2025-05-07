@@ -71,7 +71,7 @@
                 </div>
 
                 <div class="flex items-center">
-                 <input type="checkbox" id="terms" class="mr-2">
+                 <input type="checkbox" id="terms" class="mr-2" required>
                  <label for="terms" class="text-sm text-gray-600">I agree with <a href="<?= base_url('terms'); ?>" class="text-blue-500 text-sm">Terms & Conditions</a></label>
                 </div>
 

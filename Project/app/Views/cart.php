@@ -132,13 +132,13 @@
             </h3>
         </div>
         <div>
-            <h3 class="font-bold mb-2">Our Policy</h3>
-            <ul class="space-y-1">
-                <li><a href="#" class="hover:text-gray-400">Refunds</a></li>
-                <li><a href="#" class="hover:text-gray-400">COD</a></li>
-                <li><a href="#" class="hover:text-gray-400">Return & Exchange</a></li>
-            </ul>
-        </div>
+                    <h3 class="font-bold mb-2">Our Policy</h3>
+                    <ul class="space-y-1">
+                        <li><a href="<?= base_url('our_policy'); ?>" class="hover:text-gray-400">Refunds</a></li>
+                        <li><a href="<?= base_url('our_policy'); ?>" class="hover:text-gray-400">COD</a></li>
+                        <li><a href="<?= base_url('our_policy'); ?>" class="hover:text-gray-400">Return & Exchange</a></li>
+                      </ul>
+                </div>
         <div>
             <h3 class="font-bold mb-2">Contact Us</h3>
             <p class="text-sm">Email: support@Carina.com</p>

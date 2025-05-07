@@ -1,6 +1,8 @@
 <?php
 
 use CodeIgniter\Router\RouteCollection;
+use App\Controllers\Home;
+use App\Controller\Create_user;
 
 /**
  * @var RouteCollection $routes
