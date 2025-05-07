@@ -32,4 +32,21 @@ class Home extends BaseController
     {
         return view('sign_in');
     }
+    public function cart()
+    {
+        return view('cart');
+    }
+    public function shop_now()
+    {
+        return view('shop_now');
+    }
+    public function policy() {
+        return view('our_policy');
+    }
+    public function terms() {
+        return view('terms');
+    }
+    public function quantity() {
+        return view('quantity');
+    }
 }
