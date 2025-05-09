@@ -11,7 +11,13 @@
 
     <div class="bg-white p-8 rounded-lg shadow-lg w-full max-w-md">
         <div class="flex justify-center mb-4">
-            <img src="logo.jpg" alt="Logo" class="h-12">
+            <?php
+            $imageProperties = [
+                'src'    => 'logo.jpg',
+                'alt'    => 'Carina',
+                'width'  => '150'
+            ];
+            echo img($imageProperties);?>
         </div>
 
         <?=form_open('');?>

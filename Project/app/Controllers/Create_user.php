@@ -32,16 +32,12 @@ class Create_user extends BaseController{
         $name=$user_data['name'];
         $password=$user_data['password'];
         //echo $name ." and ". $password;
-        //if(
-          //$return=
-          $this->model->user_login($name,$password);
-          //echo $return;
-        //     ){
-        //     return view("index");
-        // }
-        // else{
-        //     return redirect()->to('sign_up');
-        // }
+        if($this->model->user_login($name,$password)){
+            return view('index');
+        }
+        else{
+            return redirect()->back()->with('invalid email or password', 'message');
+        }
         
     }
 
