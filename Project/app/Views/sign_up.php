@@ -20,7 +20,7 @@
             echo img($imageProperties);?>
         </div>
 
-        <?=form_open('');?>
+        <?= form_open('');?>
             <div class="space-y-4">
                 <div class="relative">
                     <span class="absolute left-3 top-3 text-gray-400">👤</span>
@@ -87,7 +87,7 @@
                     Already have an account? <a href="<?= base_url('sign_in'); ?>" class="text-blue-500">Sign in</a>
                 </p>
             </div>
-        <?= form_close()?>
+        <?= form_close();?>
     </div>
 
     <script>

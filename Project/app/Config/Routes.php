@@ -21,7 +21,8 @@ $routes->get('our_policy', 'Home::policy');
 $routes->get('terms', 'Home::terms');
 $routes->get('quantity', 'Home::quantity');
 
-$routes->post('sign_up', 'Create_user::index');
+$routes->post('sign_up', 'Create_user::add_user');
+$routes->post('sign_in', 'Create_user::login');
 
 
 $routes->get('dbtest', 'DbTest::index');

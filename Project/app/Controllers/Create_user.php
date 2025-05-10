@@ -40,6 +40,13 @@ class Create_user extends BaseController{
         }
         
     }
+    public function add_user(){
+        echo "sign up";
+    }
+    public function login(){
+        echo "login";
+        $this->model=model(Users_model::class);
+    }
 
 }
 
