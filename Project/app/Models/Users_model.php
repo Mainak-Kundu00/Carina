@@ -9,6 +9,7 @@ class Users_model extends Model{
     protected $db;
     protected $users;
     protected $admin;
+    protected $array;
 
     public function __construct(){
         $this->db = Database::connect();
@@ -36,7 +37,15 @@ class Users_model extends Model{
         //  print_r($query);
         //   echo count($query);
         if(count($query)){
-            return True;
+            // $array=[
+            //     "id" => $query[0]['id'],
+            // ];
+            // //print_r($array);
+            // return True;
+            // $this->session->set($array);
+            // $user_id = $this->session->get('id');          
+            // print_r($user_id);  
+            return $query[0]['id'];
         }
         else{
             return False;
@@ -49,10 +58,11 @@ class Users_model extends Model{
                 ->get()
                 ->getresult('array');
         
-        //  print_r($query);
-        //   echo count($query);
+        //print_r($query);
+         //print_r($query[0]['id']);
+          //echo count($query);
         if(count($query)){
-            return True;
+            return $query[0]['id'];
         }
         else{
             return False;

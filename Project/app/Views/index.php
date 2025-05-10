@@ -47,9 +47,15 @@
             <img src="shopping-cart.png" alt="Cart" class="h-6 w-6">
         </button>
     </a>
+    <?php if(session()->get('user_id') == NULL){?>
         <a href="<?= base_url('sign_up'); ?>">
             <button class="bg-blue-500 text-white px-4 py-2 rounded-md">Sign Up</button>
         </a>
+        <?php }else{?>
+            <a href="<?= base_url('/'); ?>">
+            <button class="bg-blue-500 text-white px-4 py-2 rounded-md">index</button>
+        </a>
+        <?php }?>
     </div>
 </nav>
 
