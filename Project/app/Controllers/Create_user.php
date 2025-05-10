@@ -46,6 +46,24 @@ class Create_user extends BaseController{
     public function login(){
         echo "login";
         $this->model=model(Users_model::class);
+
+        $rules = [
+            'email' => 'required|valid_email',
+            'password' => 'required|max_length[12]|min_length[6]',
+        ];
+        $logged_user=$this->request->getPost(array_keys($rules));
+
+        if (! $this->validateData($logged_user, $rules)) {
+            return redirect()->back()->withInput();
+        }
+
+        print_r($logged_user);
+
+        // if($this->model->admin_login()){
+        //     echo "Admin logged in";
+        // }else{
+        //     echo "admin not logged in";
+        // }
     }
 
 }

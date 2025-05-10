@@ -8,10 +8,12 @@ class Users_model extends Model{
 
     protected $db;
     protected $users;
+    protected $admin;
 
     public function __construct(){
         $this->db = Database::connect();
         $this->users = $this->db->table('users');
+        $this->admin = $this->db->table('admin');
         $this->db->connect();
 
     }
@@ -25,9 +27,9 @@ class Users_model extends Model{
         
     }
 
-    public function user_login($name,$password){
+    public function user_login($email,$password){
          $query= $this->users->select('id')
-                ->where(['name'=>$name,'password'=>$password])
+                ->where(['email'=>$email,'password'=>$password])
                 ->get()
                 ->getresult('array');
         
@@ -41,6 +43,21 @@ class Users_model extends Model{
         }
     }
 
+    public function admin_login($email,$password){
+         $query= $this->admin->select('id')
+                ->where(['email'=>$email,'password'=>$password])
+                ->get()
+                ->getresult('array');
+        
+         print_r($query);
+          echo count($query);
+        // if(count($query)){
+        //     return True;
+        // }
+        // else{
+        //     return False;
+        // }
+    }    
 }
 
 

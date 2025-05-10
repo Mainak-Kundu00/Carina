@@ -9,7 +9,12 @@
 <body class="bg-gradient-to-r from-pink-200 to-green-200 flex justify-center items-center min-h-screen">
     <div class="bg-white p-8 rounded-lg shadow-lg w-full max-w-sm">
         <div class="flex justify-center mb-4">
-            <img src="logo.jpg" alt="Logo" class="h-12">
+            <?php $imageProperties = [
+                    'src'    => 'logo.jpg',
+                    'alt'    => 'Carina',
+                    'width'  => '140'
+                ];
+                echo img($imageProperties);?>        
         </div>
         
         <h2 class="text-center text-2xl font-semibold mb-4">Welcome back 👋</h2>
@@ -32,7 +37,11 @@
                 <div class="text-right">
                     <a href="#" class="text-blue-500 text-sm">Forgot password?</a>
                 </div>
-
+                
+                <div style="color: red;">
+                <?= validation_list_errors() ?>
+                </div>
+                
                 <button class="w-full bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700">Log in</button>
 
                 <p class="text-center text-sm text-gray-600 mt-2">
@@ -40,6 +49,7 @@
                 </p>
             </div>
         <?= form_close()?>
+        
     </div>
 
     <script>

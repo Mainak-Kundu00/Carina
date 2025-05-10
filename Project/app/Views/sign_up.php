@@ -70,7 +70,7 @@
                 
                 <div class="relative">
                     <span class="absolute left-3 top-3 text-gray-400">🔐</span>
-                    <input type="password" placeholder="Confirm Password" id="confirmPassword" class="w-full px-10 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400">
+                    <input type="password" name="samepassword" placeholder="Confirm Password" id="confirmPassword" class="w-full px-10 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400">
                     <button type="button" onclick="togglePassword('confirmPassword', 'toggleIcon2')" class="absolute right-3 top-2 text-gray-500">
                         <span id="toggleIcon2">🙈</span>
                     </button>
