@@ -44,7 +44,7 @@ class Create_user extends BaseController{
         echo "sign up";
     }
     public function login(){
-        echo "login";
+        //echo "login";
         $this->model=model(Users_model::class);
 
         $rules = [
@@ -57,13 +57,23 @@ class Create_user extends BaseController{
             return redirect()->back()->withInput();
         }
 
-        print_r($logged_user);
+        //print_r($logged_user);
 
-        // if($this->model->admin_login()){
-        //     echo "Admin logged in";
-        // }else{
-        //     echo "admin not logged in";
-        // }
+        $email=$logged_user['email'];
+        $password=$logged_user['password'];
+
+        if($this->model->admin_login($email,$password)){
+            //echo "Admin logged in";
+            return view('Admin_panel');
+        }elseif($this->model->user_login($email,$password)){
+            //echo "admin not logged in but user is";
+            return view('index');
+        }else{
+            //echo "nobody logged in";
+
+            $this->session->setFlashdata('no_user','No record found. Please sign up first!!');
+            return redirect()->back()->withInput();
+        }
     }
 
 }

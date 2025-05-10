@@ -34,12 +34,16 @@
                     <button type="button" onclick="togglePassword()" class="absolute right-3 top-10 text-gray-500">👁️</button>
                 </div>
 
-                <div class="text-right">
+                <!-- <div class="text-right">
                     <a href="#" class="text-blue-500 text-sm">Forgot password?</a>
-                </div>
+                </div> -->
                 
                 <div style="color: red;">
                 <?= validation_list_errors() ?>
+                <?php if(session()->getFlashdata('no_user') !== NULL){
+                    echo session()->getFlashdata('no_user');
+                }?>
+
                 </div>
                 
                 <button class="w-full bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700">Log in</button>

@@ -49,14 +49,14 @@ class Users_model extends Model{
                 ->get()
                 ->getresult('array');
         
-         print_r($query);
-          echo count($query);
-        // if(count($query)){
-        //     return True;
-        // }
-        // else{
-        //     return False;
-        // }
+        //  print_r($query);
+        //   echo count($query);
+        if(count($query)){
+            return True;
+        }
+        else{
+            return False;
+        }
     }    
 }
 
