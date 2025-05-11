@@ -16,8 +16,14 @@
         <button id="menu-toggle" class="md:hidden text-gray-700 hover:text-gray-900">
             ☰
         </button>
-        <img src="logo.jpg" alt="Logo" class="h-8">
-        
+         <?php
+            $imageProperties = [
+                'src'    => 'logo.jpg',
+                'alt'    => 'Carina',
+                'width'  => '90'
+            ];
+            echo img($imageProperties);?>   
+         </div>
     </div>
 
     <!-- Desktop Menu -->
@@ -33,12 +39,30 @@
     <div class="flex space-x-4 items-center">
         <a href="<?= base_url('cart'); ?>">
         <button class="text-gray-700 hover:text-gray-900">
-            <img src="shopping-cart.png" alt="Cart" class="h-6 w-6">
+            <?php
+            $image = [
+                'src'    => 'shopping_cart.png',
+                'alt'    => 'Cart',
+                'width'  => '30'
+            ];
+            echo img($image);?>
         </button>
-    </a>
+     </a>
+        <?php if(session()->get('user_id') == NULL){?>
         <a href="<?= base_url('sign_up'); ?>">
             <button class="bg-blue-500 text-white px-4 py-2 rounded-md">Sign Up</button>
         </a>
+        <?php }else{?>
+            <a href="<?= base_url('profile'); ?>">
+            <button class="bg-blue-300 px-2 py-1 rounded-lg"><?php
+            $profile = [
+                'src'    => 'profile.png',
+                'alt'    => 'Profile',
+                'width'  => '30'
+            ];
+            echo img($profile);?></button>
+        </a>
+        <?php }?>
     </div>
 </nav>
 

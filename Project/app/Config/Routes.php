@@ -20,8 +20,16 @@ $routes->get('shop_now', 'Home::shop_now');
 $routes->get('our_policy', 'Home::policy');
 $routes->get('terms', 'Home::terms');
 $routes->get('quantity', 'Home::quantity');
+$routes->get('Admin_panel', 'Home::Admin_panel');
+ $routes->get('add_product', 'Home::add_product');
+$routes->get('delete_product', 'Home::delete_product');
+$routes->get('ordered_product', 'Home::ordered_product');
+$routes->get('update_product', 'Home::update_product');
+$routes->get('profile', 'Home::profile');
+$routes->get('logout', 'Create_user::logout');
 
-$routes->post('sign_up', 'Create_user::index');
+$routes->post('sign_up', 'Create_user::add_user');
+$routes->post('sign_in', 'Create_user::login');
 
 
 $routes->get('dbtest', 'DbTest::index');
