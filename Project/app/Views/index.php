@@ -52,8 +52,8 @@
             <button class="bg-blue-500 text-white px-4 py-2 rounded-md">Sign Up</button>
         </a>
         <?php }else{?>
-            <a href="<?= base_url('/'); ?>">
-            <button class="bg-blue-500 text-white px-4 py-2 rounded-md">index</button>
+            <a href="<?= base_url('profile'); ?>">
+            <button class="bg-blue-500 text-white px-4 py-2 rounded-md">Profile</button>
         </a>
         <?php }?>
     </div>

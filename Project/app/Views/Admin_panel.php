@@ -12,18 +12,18 @@
 
   <!-- Buttons -->
   <div class="flex flex-wrap justify-center gap-4 mb-10">
-    <a href="add-product.html">
+    <a href="<?= base_url('add_product');?>">
       <button class="bg-blue-600 text-white px-5 py-2 rounded hover:bg-blue-700 transition">Add Item</button>
     </a>
-    <a href="delete-product.html">
+    <a href="<?= base_url('delete_product');?>">
       <button class="bg-blue-600 text-white px-5 py-2 rounded hover:bg-blue-700 transition">Delete Item</button>
     </a>
-    <a href="update-product.html">
+    <a href="<?= base_url('update_product');?>">
       <button class="bg-blue-600 text-white px-5 py-2 rounded hover:bg-blue-700 transition">Update Item</button>
     </a>
-    <a href="ordered-product.html">
+    <!-- <a href="<?= base_url('ordered_product');?>">
       <button class="bg-blue-600 text-white px-5 py-2 rounded hover:bg-blue-700 transition">Orders</button>
-    </a>
+    </a> -->
   </div>
   
 

@@ -49,4 +49,22 @@ class Home extends BaseController
     public function quantity() {
         return view('quantity');
     }
+    public function Admin_panel() {
+        return view('Admin_panel');
+    }
+    public function add_product() {
+        return view('add_product');
+    }
+    public function delete_product() {
+        return view('delete_product');
+    }
+    public function ordered_product() {
+        return view('ordered_product');
+    }
+    public function update_product() {
+        return view('update_product');
+    }
+    public function profile() {
+        return view('profile');
+    }
 }

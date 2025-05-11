@@ -104,6 +104,12 @@ class Create_user extends BaseController{
         }
     }
 
+    public function logout(){
+        //echo"logout";
+        $this->session->destroy();
+        return redirect()->to('');
+    }
+
 }
 
 ?>
