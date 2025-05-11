@@ -46,7 +46,7 @@ class Create_user extends BaseController{
     }
 
     public function add_user(){
-        echo "sign up";
+       // echo "sign up";
         $this->model=model(Users_model::class);
 
         $rules = [
@@ -63,8 +63,13 @@ class Create_user extends BaseController{
         if (! $this->validateData($user_data, $rules)) {
             return redirect()->back()->withInput();
         }
-        print_r($user_data);
+        //print_r($user_data);
         
+        if($this->model->add_user($user_data)){
+            echo "Data added";
+        }else{
+            echo "Not added";
+        }
 
     }
 

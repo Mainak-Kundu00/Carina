@@ -3,6 +3,7 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 use Config\Database;
+use CodeIgniter\Database\RawSql;
 
 class Users_model extends Model{
 
@@ -37,14 +38,6 @@ class Users_model extends Model{
         //  print_r($query);
         //   echo count($query);
         if(count($query)){
-            // $array=[
-            //     "id" => $query[0]['id'],
-            // ];
-            // //print_r($array);
-            // return True;
-            // $this->session->set($array);
-            // $user_id = $this->session->get('id');          
-            // print_r($user_id);  
             return $query[0]['id'];
         }
         else{
@@ -67,7 +60,28 @@ class Users_model extends Model{
         else{
             return False;
         }
-    }    
+    } 
+    
+    public function add_user($user_data){
+        //print_r($user_data);
+        $data = [
+            'id' => new RawSql('DEFAULT'),
+            'name' => $user_data['name'],
+            'gender' => $user_data['gender'],
+            'dob' => $user_data['dob'],
+            'address' => $user_data['address'],
+            'email' => $user_data['email'],
+            'ph_no' => $user_data['ph_no'],
+            'password' => $user_data['password'],
+        ];
+        //print_r($data);
+        if($this->users->insert($data)){
+            return True;
+        }else{
+            return False;
+        }
+
+    }
 }
 
 
