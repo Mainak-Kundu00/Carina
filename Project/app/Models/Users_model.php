@@ -76,7 +76,7 @@ class Users_model extends Model{
         ];
         //print_r($data);
         if($this->users->insert($data)){
-            return True;
+            return False;
         }else{
             return False;
         }

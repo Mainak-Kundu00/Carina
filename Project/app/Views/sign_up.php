@@ -19,7 +19,18 @@
             ];
             echo img($imageProperties);?>
         </div>
-
+            <!-- account Created -->
+            <?php if(session()->getFlashdata('account_create') !== NULL){?>
+            <div style="color: green; background-color: #c1c3c7">
+                <?= session()->getFlashdata('account_create');
+                ?>
+            </div>
+            <!-- account not created -->
+            <?php }else if(session()->getFlashdata('account_create_failed') !== NULL){?>
+            <div style="color: red; background-color: #c1c3c7">
+                <?= session()->getFlashdata('account_create_failed'); }?>
+            </div>
+            <br>
         <?= form_open('');?>
             <div class="space-y-4">
                 <div class="relative">

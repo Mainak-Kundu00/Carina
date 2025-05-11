@@ -66,10 +66,14 @@ class Create_user extends BaseController{
         //print_r($user_data);
         
         if($this->model->add_user($user_data)){
-            echo "Data added";
+            //echo "Data added";
+            $this->session->setFlashdata('account_create','Account Created Succesfully');            
         }else{
-            echo "Not added";
+           // echo "Not added";
+           $this->session->setFlashdata('account_create_failed','Somthing Went Wrong!! Please Try Again Later...');
+           return redirect()->back()->withInput();
         }
+        return view('sign_up');
 
     }
 
