@@ -12,7 +12,13 @@
   <div class="max-w-xl mx-auto mt-10 p-6 bg-white rounded-lg shadow-md w-[90%] sm:w-[80%] lg:w-[60%]">
     <!-- Header -->
     <div class="flex justify-between items-center flex-wrap gap-2">
-      <img src="logo.jpg" alt="Logo" class="h-8" />
+      <?php
+            $imageProperties = [
+                'src'    => 'logo.jpg',
+                'alt'    => 'Carina',
+                'width'  => '90'
+            ];
+            echo img($imageProperties);?>  
       <div class="flex gap-2">
         <button class="bg-yellow-100 text-yellow-800 px-4 py-1 rounded-md text-sm hover:bg-yellow-200 whitespace-nowrap">
           ✎ Edit

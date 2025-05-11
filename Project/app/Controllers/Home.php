@@ -50,7 +50,11 @@ class Home extends BaseController
         return view('quantity');
     }
     public function Admin_panel() {
-        return view('Admin_panel');
+        if(session()->get('admin_id') !== NULL){
+                return view('Admin_panel');
+        }else{
+            return redirect()->to('');
+        }
     }
     public function add_product() {
         return view('add_product');
@@ -65,6 +69,10 @@ class Home extends BaseController
         return view('update_product');
     }
     public function profile() {
-        return view('profile');
+        if(session()->get('user_id') !== NULL){
+                return view('profile');
+        }else{
+            return redirect()->to('');
+        }
     }
 }

@@ -23,13 +23,13 @@
             <div class="space-y-4">
                 <div class="relative">
                     <label class="block text-gray-600 font-medium">Email</label>
-                    <input type="email" name="email" placeholder="Enter your email" class="w-full px-10 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400">
+                    <input type="email" name="email" value="<?= old('email') ?>" placeholder="Enter your email" class="w-full px-10 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400">
                     <span class="absolute left-3 top-10 text-gray-400">✉️</span>
                 </div>
 
                 <div class="relative">
                     <label class="block text-gray-600 font-medium">Password</label>
-                    <input type="password" id="password" name="password" placeholder="Enter your password" class="w-full px-10 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400">
+                    <input type="password" id="password" name="password" value="<?= old('password') ?>" placeholder="Enter your password" class="w-full px-10 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400">
                     <span class="absolute left-3 top-10 text-gray-400">🔒</span>
                     <button type="button" onclick="togglePassword()" class="absolute right-3 top-10 text-gray-500">👁️</button>
                 </div>

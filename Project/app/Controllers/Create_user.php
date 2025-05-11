@@ -9,6 +9,10 @@ class Create_user extends BaseController{
     protected $model;
 
     protected $array;
+
+    // public function __construct(){
+        
+    // }
  
     public function index(){
 
@@ -87,18 +91,22 @@ class Create_user extends BaseController{
         
         if($admin_id){
             //echo "Admin logged in";
+             if(session()->get('admin_id') !== NULL){
+                return redirect()->to('Admin_panel');
+            }  
+            $this->session->set('admin_id',$admin_id);
             return view('Admin_panel');
-        }elseif($user_id){
+        }
+        else if($user_id){
             //echo "admin not logged in but user is";
-           
+            if(session()->get('user_id') !== NULL){
+                return redirect()->to('');
+            }             
             $this->session->set('user_id',$user_id);
-//             if (isset($_SESSION['user_id'])) {
-//     echo "session set";
-// }
-           return view('index');
-        }else{
+            return view('index');
+        }
+        else{
             //echo "nobody logged in";
-
             $this->session->setFlashdata('no_user','No record found. Please sign up first!!');
             return redirect()->back()->withInput();
         }
