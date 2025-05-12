@@ -75,10 +75,16 @@ class Users_model extends Model{
             'password' => $user_data['password'],
         ];
         //print_r($data);
-        if($this->users->insert($data)){
+        //checks if the email already exists
+        $query= $this->users->select('id')
+                ->where(['email'=>$user_data['email']])
+                ->get()
+                ->getresult('array');
+
+        if(count($query)){
             return False;
-        }else{
-            return False;
+        }else if($this->users->insert($data)){
+            return True;
         }
 
     }

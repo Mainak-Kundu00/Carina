@@ -20,18 +20,21 @@
             echo img($imageProperties);?>
         </div>
             <!-- account Created -->
-            <?php if(session()->getFlashdata('account_create') !== NULL){?>
-            <div style="color: green; background-color: #c1c3c7">
+            <?php 
+            if(session()->getFlashdata('account_create') !== NULL):?>
+            <span style="color: green; background-color: #c1c3c7">
                 <?= session()->getFlashdata('account_create');
                 ?>
-            </div>
-            <!-- account not created -->
-            <?php }else if(session()->getFlashdata('account_create_failed') !== NULL){?>
+            </span>
+            <?php endif?>
+            <?php  
+            if(session()->getFlashdata('account_create_failed') !== NULL):?>
             <div style="color: red; background-color: #c1c3c7">
-                <?= session()->getFlashdata('account_create_failed'); }?>
+                <?= session()->getFlashdata('account_create_failed'); ?>
             </div>
             <br>
-        <?= form_open('');?>
+            <?php endif?>
+         <?= form_open('');?>
             <div class="space-y-4">
                 <div class="relative">
                     <span class="absolute left-3 top-3 text-gray-400">👤</span>
@@ -102,7 +105,8 @@
                     Already have an account? <a href="<?= base_url('sign_in'); ?>" class="text-blue-500">Sign in</a>
                 </p>
             </div>
-        <?= form_close();?>
+            <?= form_close();?>
+        
     </div>
 
     <script>

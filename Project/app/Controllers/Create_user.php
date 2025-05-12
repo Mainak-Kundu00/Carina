@@ -70,7 +70,7 @@ class Create_user extends BaseController{
             $this->session->setFlashdata('account_create','Account Created Succesfully');            
         }else{
            // echo "Not added";
-           $this->session->setFlashdata('account_create_failed','Somthing Went Wrong!! Please Try Again Later...');
+           $this->session->setFlashdata('account_create_failed','Email Already Exists!!! Please Use Different Email...');
            return redirect()->back()->withInput();
         }
         return view('sign_up');
