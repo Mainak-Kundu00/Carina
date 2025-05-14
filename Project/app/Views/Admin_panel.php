@@ -75,42 +75,6 @@
             <td class="py-4 px-4 border border-gray-300">Content</td>
             <td class="py-4 px-4 border border-gray-300"></td>
           </tr>
-          <tr>
-            <td class="py-4 px-4 border border-gray-300">2</td>
-            <td class="py-4 px-4 border border-gray-300">
-              <div class="flex justify-center items-center">
-              <img src="gold-necklace.jpeg" alt="Product" class="w-16 h-16 object-cover">
-            </div>
-            </td>
-            <td class="py-4 px-4 border border-gray-300">Content</td>
-            <td class="py-4 px-4 border border-gray-300 font-bold">2</td>
-            <td class="py-4 px-4 border border-gray-300">Content</td>
-            <td class="py-4 px-4 border border-gray-300"></td>
-          </tr>
-          <tr>
-            <td class="py-4 px-4 border border-gray-300">3</td>
-            <td class="py-4 px-4 border border-gray-300">
-              <div class="flex justify-center items-center">
-              <img src="gold-set.png" alt="Product" class="w-16 h-16 object-cover">
-            </div>
-            </td>
-            <td class="py-4 px-4 border border-gray-300">Content</td>
-            <td class="py-4 px-4 border border-gray-300 font-bold">87</td>
-            <td class="py-4 px-4 border border-gray-300">Content</td>
-            <td class="py-4 px-4 border border-gray-300"></td>
-          </tr>
-          <tr>
-            <td class="py-4 px-4 border border-gray-300">4</td>
-            <td class="py-4 px-4 border border-gray-300">
-              <div class="flex justify-center items-center">
-              <img src="silver-necklace.jpg" alt="Product" class="w-16 h-16 object-cover">
-              </div>
-            </td>
-            <td class="py-4 px-4 border border-gray-300">Content</td>
-            <td class="py-4 px-4 border border-gray-300 font-bold">95</td>
-            <td class="py-4 px-4 border border-gray-300">Content</td>
-            <td class="py-4 px-4 border border-gray-300"></td>
-          </tr>
         </tbody>
       </table>
     </div>

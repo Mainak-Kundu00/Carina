@@ -34,7 +34,10 @@ class Home extends BaseController
     }
     public function cart()
     {
-        return view('cart');
+       if(session()->get('user_id') == NULL){
+            return redirect()->to('sign_in');
+        }
+       return view('cart');
     }
     public function shop_now()
     {
@@ -74,5 +77,8 @@ class Home extends BaseController
         }else{
             return redirect()->to('');
         }
+    }
+    public function profile_edit() {
+        return view('profile_edit');
     }
 }

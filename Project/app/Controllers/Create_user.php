@@ -10,9 +10,6 @@ class Create_user extends BaseController{
 
     protected $array;
 
-    // public function __construct(){
-        
-    // }
  
     public function index(){
 
@@ -52,12 +49,12 @@ class Create_user extends BaseController{
         $rules = [
             'name' => 'required|alpha_space|max_length[40]',
             'gender' => 'required',
-            'dob' => 'required',
+            'dob' => ['label' => 'Date of Birth','rules' => 'required'],
             'address' => 'required|max_length[255]',
             'email' => 'required|valid_email',
-            'ph_no' => 'required|numeric|exact_length[10]',
+            'ph_no' => ['label' => 'Phone number','rules' => 'required|numeric|exact_length[10]'],
             'password' => 'required|max_length[12]|min_length[6]',
-            'Confirm_password' => 'required|matches[password]',
+            'Confirm_password' => ['label' => 'Confirm password','rules' => 'required|matches[password]'],
         ];
         $user_data=$this->request->getPost(array_keys($rules));
         if (! $this->validateData($user_data, $rules)) {

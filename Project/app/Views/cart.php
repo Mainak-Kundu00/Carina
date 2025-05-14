@@ -102,28 +102,6 @@
                 <td>$52</td>
                 <td><i class="fas fa-trash text-red-500"></i></td>
               </tr>
-              <tr class="border-b border-gray-200">
-                <td class="py-3 flex items-center gap-2"><img src="gold-ring.jpg" class="w-10 h-10 rounded" /> Product name</td>
-                <td>$52</td>
-                <td>
-                  <div class="flex items-center gap-2">
-                    <span >2</span>
-                  </div>
-                </td>
-                <td>$92</td>
-                <td><i class="fas fa-trash text-red-500"></i></td>
-              </tr>
-              <tr>
-                <td class="py-3 flex items-center gap-2"><img src="silver-necklace.jpg" class="w-10 h-10 rounded" /> Product name</td>
-                <td>$12</td>
-                <td>
-                  <div class="flex items-center gap-2">
-                    <span>2</span>
-                  </div>
-                </td>
-                <td>$36</td>
-                <td><i class="fas fa-trash text-red-500"></i></td>
-              </tr>
             </tbody>
           </table>
         </div>
@@ -131,14 +109,7 @@
 
       <!-- Payment Method & Summary -->
       <div class="w-full lg:w-1/3 bg-gray-100 rounded-xl p-6">
-        <h2 class="font-semibold text-lg mb-2"><i class="fas fa-credit-card mr-2"></i>Payment method</h2>
-        <p class="text-blue-600">Change payment method</p>
-        <div class="mt-2 space-x-4">
-          <label><input type="radio" name="payment" checked class="mr-1" /> C.O.D</label>
-          <label><input type="radio" name="payment" class="mr-1" /> Prepaid</label>
-        </div>
-
-        <h2 class="font-semibold text-lg mt-6 mb-3">Summary</h2>
+        <h2 class="font-semibold text-lg mb-2"><i class="fas fa-credit-card mr-2"></i>Payment Summary</h2>
         <div class="text-sm space-y-2">
           <div class="flex justify-between"><span>Subtotal</span><span>$180</span></div>
           <div class="flex justify-between"><span>Discount</span><span class="text-red-500">- $15</span></div>

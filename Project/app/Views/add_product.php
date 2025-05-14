@@ -6,29 +6,44 @@
   <title>Add Product</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-orange-500 flex justify-center items-center min-h-screen px-4">
-  <div class="bg-orange-400 p-6 rounded-lg shadow-lg w-full max-w-md">
+<body class="bg-[#bd5752] flex justify-center items-center min-h-screen">
+  <div class="bg-[#b18a95] p-6 rounded-lg shadow-lg w-full max-w-md">
     <h2 class="text-center text-2xl font-bold mb-6 text-gray-800">PRODUCT UPDATION</h2>
-    <form class="flex flex-col gap-4">
-      <label class="font-semibold text-gray-800">PRODUCT NAME:</label>
-      <input type="text" placeholder="Name" class="px-4 py-2 rounded outline-none">
 
-      <label class="font-semibold text-gray-800">PRODUCT PRICE:</label>
-      <input type="text" placeholder="Price" class="px-4 py-2 rounded outline-none">
+    <?= form_open_multipart('');?>
+      <div class="flex flex-col gap-4">
 
-      <label class="font-semibold text-gray-800">PRODUCT iMAGE:</label>
-      <input type="file" class="px-4 py-2 rounded bg-white">
+        <label class="font-semibold text-gray-800">PRODUCT NAME:</label>
+        <input type="text" name="product_name" value="<?= old('product_name') ?>" placeholder="Name" class="px-4 py-2 rounded outline-none">
 
-      <label class="font-semibold text-gray-800">PRODUCT CATEGORY:</label>
-      <select class="px-4 py-2 rounded outline-none">
-        <option>Category</option>
-      </select>
+        <label class="font-semibold text-gray-800">PRODUCT PRICE:</label>
+        <input type="text" name="product_price" value="<?= old('product_price') ?>" placeholder="Price" class="px-4 py-2 rounded outline-none">
 
-      <label class="font-semibold text-gray-800">QUANTITY</label>
-      <input type="number" placeholder="100" class="px-4 py-2 rounded outline-none">
+        <label class="font-semibold text-gray-800">PRODUCT IMAGE(MAX 40MB):</label>
+        <!-- <input type="file" name="product_img" value="<?= old('product_img') ?>" class="px-4 py-2 rounded bg-white"> -->
+        <span class="px-4 py-2 rounded bg-white">
+          <?= form_upload(['name'=>'product_img']); ?>
+        </span>
 
-      <button type="submit" class="bg-indigo-600 text-white rounded py-2 mt-4 hover:bg-indigo-700">ADD ITEM</button>
-    </form>
+        <label class="font-semibold text-gray-800">PRODUCT CATEGORY:</label>
+        <select class="px-4 py-2 rounded outline-none" name="product_category" value="<?= old('product_category') ?>">
+          <?php 
+            $gender=array("Ring","Necklace","Jwelry Set");
+            foreach($gender as $g): ?>   
+              <option><?= $g?></option>
+          <?php endforeach?>
+        </select>
+
+        <label class="font-semibold text-gray-800">QUANTITY</label>
+        <input type="number" name="quantity" value="<?= old('quantity') ?>" placeholder="100" class="px-4 py-2 rounded outline-none">
+
+        <div style="color: red;">
+          <?= validation_list_errors() ?>
+        </div>
+        
+        <button type="submit"  class="bg-indigo-600 text-white rounded py-2 mt-4 hover:bg-indigo-700">ADD ITEM</button>
+      </div>
+    <?= form_close();?>
   </div>
 </body>
 </html>

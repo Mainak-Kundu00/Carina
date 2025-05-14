@@ -10,7 +10,6 @@ class Users_model extends Model{
     protected $db;
     protected $users;
     protected $admin;
-    protected $array;
 
     public function __construct(){
         $this->db = Database::connect();

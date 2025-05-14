@@ -20,13 +20,15 @@
             ];
             echo img($imageProperties);?>  
       <div class="flex gap-2">
-        <button class="bg-yellow-100 text-yellow-800 px-4 py-1 rounded-md text-sm hover:bg-yellow-200 whitespace-nowrap">
-          ✎ Edit
-        </button>
+        <a href="<?= base_url('profile_edit');?>">
+          <button class="bg-yellow-100 text-yellow-800 px-4 py-1 rounded-md text-sm hover:bg-yellow-200 whitespace-nowrap">
+            ✎ Edit
+          </button>
+        </a>
         <a href="<?= base_url('logout');?>">
-        <button class="bg-red-100 text-red-700 px-4 py-1 rounded-md text-sm hover:bg-red-200 whitespace-nowrap">
-          ⎋ Logout
-        </button>
+          <button class="bg-red-100 text-red-700 px-4 py-1 rounded-md text-sm hover:bg-red-200 whitespace-nowrap">
+            ⎋ Logout
+          </button>
         </a>
       </div>
     </div>
