@@ -29,9 +29,9 @@
             <?php endif?>
             <?php  
             if(session()->getFlashdata('account_create_failed') !== NULL):?>
-            <div style="color: red; background-color: #c1c3c7">
+            <span style="color: red; background-color: #c1c3c7">
                 <?= session()->getFlashdata('account_create_failed'); ?>
-            </div>
+            </span>
             <br>
             <?php endif?>
         <?= form_open('');?>

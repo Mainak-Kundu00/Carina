@@ -28,48 +28,61 @@ class Admin_product extends BaseController{
         $img = $this->request->getFile('product_img');
 
         // print_r($product_data);
-         print_r($img);
+        print_r($img);
 
+        if ($img->isValid() && ! $img->hasMoved()) {
+            $img_name = $img->getRandomName();
+            $img->move('uploads/', $img_name);
+        }
+        $product_data['product_img']=$img_name;
 
-
-////////// trying out ////////////////
-
-
-
-if ($img->isValid() && ! $img->hasMoved()) {
-    $img_name = $img->getRandomName();
-    $img->move('uploads/', $img_name);
-}
- $product_data['product_img']=$img_name;
-
-
-
-
-
-
-
-
-/////////////////////
-
-         //$img_path = $img->move(WRITEPATH . 'uploads');
-        // $product_data['product_img']=$img_path;
-        // print_r($img);
-        // print_r($product_data);
-
-     if($this->model->add_product($product_data)){
-            //$products['products']=$this->model->get_product();
-        // print_r($products[0]['product_img']);
-            //print_r($products);
-        //print_r(compact('products'));
-        // echo "<pre>";
-        // print_r($products['products']);
+        if($this->model->add_product($product_data)){
             return redirect()->to('Admin_panel');
         }
-
-
           
     }
 
+    public function delete(){
+        $this->model= model(Admin_model::class);
+
+        $rules = ['id'=> 'required|integer|greater_than[0]',];
+        $id=$this->request->getPost(array_keys($rules));
+
+        if (! $this->validateData($id, $rules)) {
+            return redirect()->back()->withInput();
+        }
+        //print_r($id['id']);
+        if($this->model->delete_product($id)){
+            $this->session->setFlashdata('delete_product','Product Deletion Succesfull !!!');
+            return redirect()->to('Admin_panel');
+        }else{
+             $this->session->setFlashdata('delete_product','Invalid ID ...');
+             return redirect()->back()->withInput();
+        }
+    }
+
+    public function update(){
+        $this->model= model(Admin_model::class);
+    
+        $rules = [
+            'id'=> 'required|integer|greater_than[0]',
+            'product_price' => ['label' => 'Product price','rules' => 'required|numeric|greater_than[0]'],
+            'quantity' => 'required|numeric|greater_than[0]',
+          ];
+        $product_data=$this->request->getPost(array_keys($rules));
+
+        if (! $this->validateData($product_data, $rules)) {
+            return redirect()->back()->withInput();
+        }
+
+        if($this->model->update_product($product_data)){
+            $this->session->setFlashdata('update_product','Product Updation Succesfull !!!');
+            return redirect()->to('Admin_panel');
+        }else{
+             $this->session->setFlashdata('update_product','Invalid ID ...');
+             return redirect()->back()->withInput();
+        }
+    }
 }
 
 ?>

@@ -40,6 +40,42 @@ class Admin_model extends Model{
         return $query;
     }
 
+    public function delete_product($id){
+        $check=$this->product->select('id')
+                ->where('id',$id['id'])
+                ->get()
+                ->getresult('array');
+       
+
+        if(count($check)){
+             $query=$this->product->where('id', $id['id'])->delete();
+             return True;
+        }else{
+            return False;
+        }
+    }
+    public function update_product($product_data){
+        $check=$this->product->select('id')
+                ->where('id',$product_data['id'])
+                ->get()
+                ->getresult('array');
+       
+
+        if(count($check)){
+            $data = [
+                        'product_price' => $product_data['product_price'],
+                        'quantity'  => $product_data['quantity'],
+                    ];
+             $query=$this->product
+                        ->where('id',$product_data['id'])
+                        ->update($data);
+             return True;
+        }else{
+            return False;
+        }
+    }
+    
+
 }
 
 

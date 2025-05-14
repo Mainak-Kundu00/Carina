@@ -97,19 +97,16 @@ class Create_user extends BaseController{
         
         if($admin_id){
             //echo "Admin logged in";
-             if(session()->get('admin_id') !== NULL){
-                return redirect()->to('Admin_panel');
-            }  
             $this->session->set('admin_id',$admin_id);
-            return view('Admin_panel');
+            return redirect()->to('Admin_panel');
         }
         else if($user_id){
             //echo "admin not logged in but user is";
-            if(session()->get('user_id') !== NULL){
-                return redirect()->to('');
-            }             
+            // if(session()->get('user_id') !== NULL){
+            //     return redirect()->to('');
+            // }             
             $this->session->set('user_id',$user_id);
-            return view('index');
+            return redirect()->to('');
         }
         else{
             //echo "nobody logged in";

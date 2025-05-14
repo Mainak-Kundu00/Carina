@@ -28,11 +28,20 @@ class Home extends BaseController
     }
     public function sign_up()
     {
-        return view('sign_up');
+        if(session()->get('user_id') == NULL){
+                return view('sign_up');
+        }else{
+            return redirect()->to('');
+        }
     }
     public function sign_in()
     {
-        return view('sign_in');
+        if(session()->get('user_id') == NULL){
+                return view('sign_in');
+        }else{
+            return redirect()->to('');
+        }
+        //return view('sign_in');
     }
     public function cart()
     {

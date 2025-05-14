@@ -50,6 +50,19 @@
 
     <!-- Product Table -->
     <h2 class="text-2xl font-bold mb-6 text-center">Product Database</h2>
+    <?php 
+       if(session()->getFlashdata('delete_product') !== NULL):?>
+          <span style="color: green;">
+            <?= session()->getFlashdata('delete_product');?>
+          </span>
+    <?php endif?>
+    <?php 
+      if(session()->getFlashdata('update_product') !== NULL):?>
+        <span style="color: green;">
+          <?= session()->getFlashdata('update_product');
+          ?>
+        </span>
+    <?php endif?>
     <div class="w-full overflow-x-auto">
       <table class="w-full border border-gray-300 text-sm sm:text-base text-center">
         <thead>
