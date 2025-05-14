@@ -2,6 +2,8 @@
 
 namespace App\Controllers;
 
+use App\Models\Admin_model;
+
 class Home extends BaseController
 {
     public function index()
@@ -54,7 +56,9 @@ class Home extends BaseController
     }
     public function Admin_panel() {
         if(session()->get('admin_id') !== NULL){
-                return view('Admin_panel');
+            $this->model= model(Admin_model::class);
+            $products['products']=$this->model->get_product();
+            return view('Admin_panel',$products);
         }else{
             return redirect()->to('');
         }

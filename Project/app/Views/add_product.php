@@ -28,14 +28,14 @@
         <label class="font-semibold text-gray-800">PRODUCT CATEGORY:</label>
         <select class="px-4 py-2 rounded outline-none" name="product_category" value="<?= old('product_category') ?>">
           <?php 
-            $gender=array("Ring","Necklace","Jwelry Set");
+            $gender=array("Ring","Necklace","Jewelry Set");
             foreach($gender as $g): ?>   
               <option><?= $g?></option>
           <?php endforeach?>
         </select>
 
         <label class="font-semibold text-gray-800">QUANTITY</label>
-        <input type="number" name="quantity" value="<?= old('quantity') ?>" placeholder="100" class="px-4 py-2 rounded outline-none">
+        <input type="text" name="quantity" value="<?= old('quantity') ?>" placeholder="100" class="px-4 py-2 rounded outline-none">
 
         <div style="color: red;">
           <?= validation_list_errors() ?>

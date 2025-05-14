@@ -17,9 +17,27 @@ class Admin_model extends Model{
 
     }
 
-    public function hello(){
-        echo "IN the admin model class";
-       
+    public function add_product($product_data){
+        //print_r($product_data);
+        $data = [
+            'id' => new RawSql('DEFAULT'),
+            'product_name' => $product_data['product_name'],
+            'product_price' => $product_data['product_price'],
+            'product_img' => $product_data['product_img'],
+            'product_category' => $product_data['product_category'],
+            'quantity' => $product_data['quantity'],
+        ];
+        //print_r($data);
+        if($this->product->insert($data)){
+            return True;
+        }
+    } 
+
+    public function get_product(){
+        $query=$this->product->get()
+                ->getresult('array');
+
+        return $query;
     }
 
 }

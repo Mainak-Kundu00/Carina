@@ -10,15 +10,10 @@ class Admin_product extends BaseController{
 
  
     public function index(){
-
-       // echo "hello";
         $this->model= model(Admin_model::class);
-        // //checking function to know model is connected or not
-        //  $this->model->hello();
-        //  echo"<br>";    
-       
+    
         $rules = [
-            'product_name' => ['label' => 'Product name','rules' => 'required|alpha_numeric_space|max_length[80]'],
+            'product_name' => ['label' => 'Product name','rules' => 'required|alpha_space|max_length[80]'],
             'product_price' => ['label' => 'Product price','rules' => 'required|numeric|greater_than[0]'],
             'product_img' => ['label' => 'Image File','rules' => 'uploaded[product_img]|max_size[product_img,40960]|is_image[product_img]|mime_in[product_img,image/jpeg,image/png]'],
             'product_category' => ['label' => 'Product Category','rules' => 'required'],
@@ -30,11 +25,49 @@ class Admin_product extends BaseController{
             return redirect()->back()->withInput();
         }
        
-        //$product_data=$this->request->getPost();
         $img = $this->request->getFile('product_img');
 
-         print_r($product_data);
+        // print_r($product_data);
          print_r($img);
+
+
+
+////////// trying out ////////////////
+
+
+
+if ($img->isValid() && ! $img->hasMoved()) {
+    $img_name = $img->getRandomName();
+    $img->move('uploads/', $img_name);
+}
+ $product_data['product_img']=$img_name;
+
+
+
+
+
+
+
+
+/////////////////////
+
+         //$img_path = $img->move(WRITEPATH . 'uploads');
+        // $product_data['product_img']=$img_path;
+        // print_r($img);
+        // print_r($product_data);
+
+     if($this->model->add_product($product_data)){
+            //$products['products']=$this->model->get_product();
+        // print_r($products[0]['product_img']);
+            //print_r($products);
+        //print_r(compact('products'));
+        // echo "<pre>";
+        // print_r($products['products']);
+            return redirect()->to('Admin_panel');
+        }
+
+
+          
     }
 
 }

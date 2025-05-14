@@ -54,6 +54,7 @@
       <table class="w-full border border-gray-300 text-sm sm:text-base text-center">
         <thead>
           <tr class="bg-gray-100 text-gray-700">
+            <th class="py-3 px-4 border border-gray-300">SL No.</th>
             <th class="py-3 px-4 border border-gray-300">ID</th>
             <th class="py-3 px-4 border border-gray-300">Product image</th>
             <th class="py-3 px-4 border border-gray-300">Product name</th>
@@ -63,18 +64,22 @@
           </tr>
         </thead>
         <tbody class="text-gray-700">
+          <?php $count=1;
+          foreach($products as $item):?>
           <tr>
-            <td class="py-4 px-4 border border-gray-300">1</td>
+            <td class="py-4 px-4 border border-gray-300"><?= $count++;?></td>
+            <td class="py-4 px-4 border border-gray-300"><?= $item['id'];?></td>
             <td class="py-4 px-4 border border-gray-300">
               <div class="flex justify-center items-center">
-              <img src="gold-ring.jpg" alt="Product" class="w-16 h-16 object-cover">
+              <img src="<?= base_url("uploads/".$item['product_img']); ?>" alt="Product" class="w-16 h-16 object-cover">
             </div>
             </td>
-            <td class="py-4 px-4 border border-gray-300">Content</td>
-            <td class="py-4 px-4 border border-gray-300 font-bold">34</td>
-            <td class="py-4 px-4 border border-gray-300">Content</td>
-            <td class="py-4 px-4 border border-gray-300"></td>
+            <td class="py-4 px-4 border border-gray-300"><?= $item['product_name'];?></td>
+            <td class="py-4 px-4 border border-gray-300 font-bold"><?= $item['quantity'];?></td>
+            <td class="py-4 px-4 border border-gray-300"><?= $item['product_category'];?></td>
+            <td class="py-4 px-4 border border-gray-300"><?= $item['product_price'];?></td>
           </tr>
+          <?php endforeach; ?>
         </tbody>
       </table>
     </div>

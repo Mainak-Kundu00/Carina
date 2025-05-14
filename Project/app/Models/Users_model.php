@@ -19,15 +19,6 @@ class Users_model extends Model{
 
     }
 
-    public function hello(){
-        echo "IN the model class";
-        $query   = $this->users->get();
-        foreach($query->getresult('array') as $row){
-            echo $row['name'];//gives name from database user table
-        }
-        
-    }
-
     public function user_login($email,$password){
          $query= $this->users->select('id')
                 ->where(['email'=>$email,'password'=>$password])
