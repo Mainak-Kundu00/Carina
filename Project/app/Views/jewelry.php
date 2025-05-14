@@ -79,7 +79,7 @@
 
     <!-- Banner Section -->
     <header class="relative">
-        <img src="jewellery-set.png" alt="Rings Banner" class="w-full h-64 object-cover">
+        <img src="jewellery_set.png" alt="Rings Banner" class="w-full h-64 object-cover">
         <div class="absolute inset-0 bg-black bg-opacity-40 flex flex-col items-center justify-center text-white">
             <h1 class="text-4xl font-bold">Priceless Jewellery sets</h1>
             <p class="text-lg">See the limitless style and express your personality.</p>

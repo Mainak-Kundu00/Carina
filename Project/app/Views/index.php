@@ -112,17 +112,26 @@
 
     <div id="product-list" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 px-10 mb-16">
         <div class="bg-white p-4 shadow-md rounded-lg flex flex-col items-center text-center transition-transform transform hover:scale-105 hover:shadow-lg duration-300">
-            <img src="jhumka.jpeg" class="w-full h-72 object-cover rounded-md">
-            <h3 class="font-bold mt-5 text-2xl hover:text-pink-500 transition-colors duration-300">Jhumka</h3>
+            <a href="<?= base_url('rings'); ?>">
+                <img src="gold_ring.jpg" class="w-full h-72 object-cover rounded-md">
+                <h3 class="font-bold mt-5 text-2xl hover:text-pink-500 transition-colors duration-300">Ring</h3>
+            </a>
         </div>
-        <div class="bg-white p-4 shadow-md rounded-lg flex flex-col items-center text-center transition-transform transform hover:scale-105 hover:shadow-lg duration-300">
-            <img src="chain.JPG" class="w-full h-72 object-cover rounded-md">
-            <h3 class="font-bold mt-5 text-2xl hover:text-pink-500 transition-colors duration-300">Chain</h3>
-        </div>
+        
+        <a href="<?= base_url('necklaces'); ?>">
+            <div class="bg-white p-4 shadow-md rounded-lg flex flex-col items-center text-center transition-transform transform hover:scale-105 hover:shadow-lg duration-300">
+                <img src="chain.JPG" class="w-full h-72 object-cover rounded-md">
+                <h3 class="font-bold mt-5 text-2xl hover:text-pink-500 transition-colors duration-300">Chain</h3>
+            </div>
+         </a>
+        
+        <a href="<?= base_url('jewelry'); ?>">
         <div class="bg-white p-4 shadow-md rounded-lg flex flex-col items-center text-center transition-transform transform hover:scale-105 hover:shadow-lg duration-300">
             <img src="kaner.JPG" class="w-full h-72 object-cover rounded-md">
             <h3 class="font-bold mt-5 text-2xl hover:text-pink-500 transition-colors duration-300">Classic Top</h3>
         </div>
+        </a>
+
     </div>
     
     <!-- Footer -->
