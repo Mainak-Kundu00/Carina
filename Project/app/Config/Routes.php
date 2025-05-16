@@ -35,6 +35,8 @@ $routes->post('sign_in', 'Create_user::login');
 $routes->post('add_product', 'Admin_product::index');
 $routes->post('delete_product', 'Admin_product::delete');
 $routes->post('update_product', 'Admin_product::update');
+$routes->post('profile_edit', 'Create_user::update_user');
+
 
 
 $routes->get('dbtest', 'DbTest::index');

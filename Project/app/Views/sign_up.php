@@ -43,7 +43,7 @@
 
                 <div class="relative">
                     <span class="absolute left-3 top-3 text-gray-400">⚤</span>
-                    <select name="gender" value="<?= old('gemder') ?>" class="w-full px-10 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400">
+                    <select name="gender" value="<?= old('gender') ?>" class="w-full px-10 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400">
                      <?php 
                      $gender=array("Male","Female","Other");
                      foreach($gender as $g): ?>   

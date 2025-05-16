@@ -46,25 +46,31 @@
     <!-- Profile Info -->
     <div class="space-y-4 text-sm sm:text-base">
       <div>
+        <?php foreach($user_data as $user):?>
         <p class="font-medium text-gray-600">Name:</p>
-        <p class="font-bold" id="name">Nilesh Roy</p>
+        <p class="font-bold" id="name"><?= $user['name']; ?></p>
       </div>
       <div>
         <p class="font-medium text-gray-600">Gender:</p>
-        <p class="font-bold">Male</p>
+        <p class="font-bold"><?= $user['gender']; ?></p>
       </div>
       <div>
         <p class="font-medium text-gray-600">D.O.B:</p>
-        <p class="font-bold">2004-12-01</p>
+        <p class="font-bold"><?= $user['dob']; ?></p>
       </div>
       <div>
         <p class="font-medium text-gray-600">Phone:</p>
-        <p class="font-bold">+91-1234-567-890</p>
+        <p class="font-bold"><?= $user['ph_no']; ?></p>
       </div>
       <div>
         <p class="font-medium text-gray-600">Email:</p>
-        <p class="font-bold">Nilesh123@gmail.com</p>
+        <p class="font-bold"><?= $user['email']; ?></p>
       </div>
+      <div>
+        <p class="font-medium text-gray-600">Address:</p>
+        <p class="font-bold"><?= $user['address']; ?></p>
+      </div>
+      <?php endforeach ?>
     </div>
   </div>
 

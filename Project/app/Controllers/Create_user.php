@@ -121,6 +121,30 @@ class Create_user extends BaseController{
         return redirect()->to('');
     }
 
+    public function update_user(){
+        //echo"updated";
+        $this->model=model(Users_model::class);
+
+        $rules = [
+            'name' => 'required|alpha_space|max_length[40]',
+            'gender' => 'required',
+            'dob' => ['label' => 'Date of Birth','rules' => 'required|valid_date[Y-m-d]'],
+            'address' => 'required|max_length[255]',
+            'email' => 'required|valid_email',
+            'ph_no' => ['label' => 'Phone number', 'rules' => 'required|numeric|exact_length[10]'],
+        ];
+        $user_data=$this->request->getPost(array_keys($rules));
+        if (! $this->validateData($user_data, $rules)) {
+            return redirect()->back()->withInput();
+        }
+
+        $user_id=session()->get('user_id');
+        if($this->model->update_user($user_id,$user_data)){
+            return redirect()->to('profile');
+        }else{
+            $this->session->setFlashdata('profile_update','Something Went Wrong !!! Please try again .....'); 
+        }
+    }
 }
 
 ?>

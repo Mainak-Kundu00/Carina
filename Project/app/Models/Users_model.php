@@ -78,6 +78,33 @@ class Users_model extends Model{
         }
 
     }
+
+    public function get_user($user_id){
+        $query = $this->users->where(['id'=> $user_id])
+                            ->get()
+                            ->getresult('array');
+        
+        return $query;
+    }
+
+    public function update_user($user_id,$user_data){
+        $data = [
+                 'name' => $user_data['name'],
+                 'gender' => $user_data['gender'],
+                 'dob' => $user_data['dob'],
+                 'address' => $user_data['address'],
+                 'email' => $user_data['email'],
+                 'ph_no' => $user_data['ph_no'],
+             ];
+         $query=$this->users
+                    ->where('id',$user_id)
+                    ->update($data);
+        if($query){
+            return True;
+        }else{
+            return False;
+        }
+    }
 }
 
 
