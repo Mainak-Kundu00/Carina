@@ -96,7 +96,7 @@
                 <td>$52</td>
                 <td>
                   <div class="flex items-center gap-2">
-                    <span>2</span>
+                    <span>&nbsp;&nbsp;&nbsp;&nbsp;2</span>
                   </div>
                 </td>
                 <td>$52</td>

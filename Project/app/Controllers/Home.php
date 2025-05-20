@@ -23,7 +23,6 @@ class Home extends BaseController
     {
         $this->model=model(Product_model::class);
         $data['rings']=$this->model->get_rings();
-        //print_r($data);
         return view('rings',$data);
     }
 
@@ -76,9 +75,13 @@ class Home extends BaseController
         return view('terms');
     }
 
-    public function quantity() {
-        return view('quantity');
-    }
+    // public function quantity() {
+    //     if(session()->get('user_id') != NULL){
+    //             return view('quantity');
+    //     }else{
+    //         return redirect()->to('');
+    //     }
+    // }
 
     public function Admin_panel() {
         if(session()->get('admin_id') !== NULL){
