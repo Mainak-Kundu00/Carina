@@ -4,6 +4,8 @@ namespace App\Controllers;
 
 use App\Models\Admin_model;
 use App\Models\Users_model;
+use App\Models\Product_model;
+
 
 class Home extends BaseController
 {
@@ -19,6 +21,8 @@ class Home extends BaseController
 
     public function rings()
     {
+        $this->model=model(Product_model::class);
+        //$this->model->hello();
         return view('rings');
     }
 
