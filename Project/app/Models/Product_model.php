@@ -28,4 +28,13 @@ class Product_model extends Model{
 
         return $query;        
     }
+
+    public function get_quantity($product_data){
+        $query= $this->product->select('quantity')
+                    ->where('id',$product_data['product_id'])
+                    ->get()
+                    ->getresult('array');
+
+        return $query[0]['quantity'];
+    }
 }

@@ -102,17 +102,12 @@
                     <h3 class="text-lg font-semibold mt-2"><?= $item['product_name'];?></h3>
 
                     <p class="text-gray-600 text-sm">₹<?= $item['product_price'];?></p>
-                    
-                    <!-- <?php echo form_open("");
-                    echo form_hidden('product_id',$item['id']);
-                    echo form_hidden('user_id',session()->get('user_id'));?>   -->
+
                     <a href="<?= base_url('quantity?product_id='. $item['id'])?>"> 
                         <button type="submit" class="mt-2 bg-purple-600 text-white px-4 py-2 rounded hover:bg-purple-700 hover:shadow-lg">Add to cart</button>
                     </a>
                 </div>
-            </div>
-            
-            <!-- <?= form_close();?> -->
+            </div> 
         <?php endforeach ?>
     </div>
 </section>
