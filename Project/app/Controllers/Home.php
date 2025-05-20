@@ -22,8 +22,9 @@ class Home extends BaseController
     public function rings()
     {
         $this->model=model(Product_model::class);
-        //$this->model->hello();
-        return view('rings');
+        $data['rings']=$this->model->get_rings();
+        //print_r($data);
+        return view('rings',$data);
     }
 
     public function necklaces()

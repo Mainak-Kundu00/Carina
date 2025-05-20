@@ -15,7 +15,17 @@ class Product_model extends Model{
         $this->product = $this->db->table('product');
         $this->db->connect();
     }
+
     public function hello(){
         echo "category page";
+    }
+
+    public function get_rings(){
+        $query= $this->product
+                ->where(['product_category'=> 'Ring'])
+                ->get()
+                ->getresult('array');
+
+        return $query;        
     }
 }
