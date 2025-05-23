@@ -43,4 +43,19 @@ class Product extends BaseController{
             return redirect()->to('rings');
         }
     }
+
+    public function Delete(){
+        $this->model= model(Product_model::class);
+
+        $product_id=$this->request->getGet(['product_id']);
+        //print_r($product_id);
+
+        $user_id=session()->get('user_id');
+        if($this->model->Delete_product($product_id,$user_id)){
+            return redirect()->to('cart');
+        }else{
+            $this->session->setFlashdata('Delete',"Can't Delete now!!! Please try again later ......");
+            return redirect()->to('cart');
+        }
+    }
 }

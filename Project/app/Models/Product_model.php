@@ -43,8 +43,6 @@ class Product_model extends Model{
     }
 
     public function add_product($product_data){
-        // echo "product";
-        // print_r($product_data);
        $data = [
             'id' => new RawSql('DEFAULT'),
             'user_id' => $product_data['user_id'],
@@ -94,12 +92,42 @@ class Product_model extends Model{
 
     public function get_cart_items($user_id){
         $query = $this->cart
-                        ->select('cart.quantity, product.product_name, product.product_price, product.product_img')
+                        ->select('cart.product_id,cart.quantity, product.product_name, product.product_price, product.product_img')
                         ->join('product', 'cart.product_id = product.id')
                         ->where('cart.user_id', $user_id)
                         ->get()
                         ->getResultArray();
 
         return $query;
+    }
+
+    public function Delete_product($id,$user_id){
+        //print_r($id);
+        $quantity = $this->cart->select('quantity')
+                               ->where('product_id',$id['product_id'])
+                               ->where('user_id',$user_id)
+                               ->get()
+                               ->getResult('array');
+
+        $product_quantity=$this->product->select('quantity')
+                ->where('id',$id['product_id'])
+                ->get()
+                ->getresult('array');
+
+        $new_quantity = $quantity[0]['quantity']+$product_quantity[0]['quantity'];
+
+        $query=$this->cart
+                    ->where('product_id', $id['product_id'])
+                    ->where('user_id',$user_id)
+                    ->delete();
+        if($query){
+            $this->product->set('quantity',$new_quantity)
+                        ->where('id',$id['product_id'])
+                        ->update();
+            
+            return True;
+        }else{
+            return False;
+        }
     }
 }

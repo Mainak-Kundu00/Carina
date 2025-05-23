@@ -79,6 +79,13 @@
       <!-- Order Summary -->
       <div class="w-full lg:w-2/3 bg-gray-100 rounded-xl p-6">
         <h2 class="font-semibold text-lg mb-4 flex items-center"><i class="fas fa-shopping-cart mr-2"></i>Order summary</h2>
+        <?php  
+        if(session()->getFlashdata('Delete') !== NULL):?>
+          <span style="color: red;">
+            <?= session()->getFlashdata('Delete'); ?>
+          </span>
+            <br>
+      <?php endif?>
         <?php if($cart_items != NULL):?>
           <div class="overflow-x-auto">
             <table class="w-full text-sm">
@@ -110,7 +117,13 @@
 
                     <td class="mx-[50%]">&nbsp;&nbsp;₹<?= ($item['quantity']*$item['product_price']); ?></td>
 
-                    <td><i class="fas fa-trash text-red-500"></i></td>
+                    <td>
+                      <a href="<?= base_url('Delete?product_id='. $item['product_id']);?>">
+                        <button class="bg-red-100 text-red-700 px-4 py-1 rounded-md text-sm hover:bg-red-200 whitespace-nowrap">
+                          <i class="fas fa-trash text-red-500"></i>
+                        </button>
+                      </a>
+                    </td>
                   </tr>
                 </tbody>
               <?php endforeach; ?>

@@ -61,9 +61,9 @@ class Home extends BaseController
             return redirect()->to('sign_in');
        }
        $this->cart=model(Product_model::class);
-       $this->product= model(Admin_model::class);
        $data = ['cart_items' => $this->cart->get_cart_items($user_id),
        ];
+    //    print_r($data);
        return view('cart',$data);
     }
 
