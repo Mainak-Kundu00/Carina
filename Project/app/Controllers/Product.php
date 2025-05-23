@@ -15,7 +15,7 @@ class Product extends BaseController{
             //print_r($product_data);
                 return view('quantity',$product_data);
         }else{
-            return redirect()->to('');
+            return redirect()->to('sign_in');
         }
     }
 
@@ -36,6 +36,9 @@ class Product extends BaseController{
             return redirect()->back()->withInput();
         }
 
-        print_r($product_data);
+        if(
+            $this->model->add_product($product_data)){
+            echo"successfully added";
+        }
     }
 }

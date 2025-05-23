@@ -98,14 +98,20 @@
                 <img src="<?= base_url("uploads/".$item['product_img']); ?>" alt="Royal Diamond Ring" class="w-full h-48 object-cover">
                 <div class="p-4">
 
-                    <p class="text-sm text-white bg-gray-500 rounded-full px-3 py-1 uppercase inline-block">Ring</p>
+                    <p class="text-sm text-white bg-gray-500 rounded-full px-3 py-1 uppercase inline-block"><?= $item['product_category'];?></p>
                     <h3 class="text-lg font-semibold mt-2"><?= $item['product_name'];?></h3>
+
+                    <span class="text-gray-600 text-sm"><?= $item['quantity'];?> left</span>
 
                     <p class="text-gray-600 text-sm">₹<?= $item['product_price'];?></p>
 
+                    <?php if($item['quantity'] > 0):?>
                     <a href="<?= base_url('quantity?product_id='. $item['id'])?>"> 
                         <button type="submit" class="mt-2 bg-purple-600 text-white px-4 py-2 rounded hover:bg-purple-700 hover:shadow-lg">Add to cart</button>
                     </a>
+                    <?php else:?>
+                        <button type="submit" class="mt-2 bg-purple-600 text-white px-4 py-2 rounded hover:bg-purple-700 hover:shadow-lg">Out of Stock</button>
+                    <?php endif; ?>
                 </div>
             </div> 
         <?php endforeach ?>
