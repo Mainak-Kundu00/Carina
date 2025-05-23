@@ -36,9 +36,11 @@ class Product extends BaseController{
             return redirect()->back()->withInput();
         }
 
-        if(
-            $this->model->add_product($product_data)){
-            echo"successfully added";
+        if($this->model->add_product($product_data)){
+            return redirect()->to('cart');
+        }else{
+            $this->session->setFlashdata('Error','Something Went Wrong !!! Please try again later');
+            return redirect()->to('rings');
         }
     }
 }

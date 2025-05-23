@@ -79,32 +79,46 @@
       <!-- Order Summary -->
       <div class="w-full lg:w-2/3 bg-gray-100 rounded-xl p-6">
         <h2 class="font-semibold text-lg mb-4 flex items-center"><i class="fas fa-shopping-cart mr-2"></i>Order summary</h2>
-        <div class="overflow-x-auto">
-          <table class="w-full text-sm">
-            <thead>
-              <tr class="text-left border-b border-gray-300">
-                <th class="py-2">Name</th>
-                <th class="py-2">Price</th>
-                <th class="py-2">Quantity</th>
-                <th class="py-2">Total</th>
-                <th></th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr class="border-b border-gray-200">
-                <td class="py-3 flex items-center gap-2"><img src="diamond-ring.png" class="w-10 h-10 rounded" /> Product name</td>
-                <td>$52</td>
-                <td>
-                  <div class="flex items-center gap-2">
-                    <span>&nbsp;&nbsp;&nbsp;&nbsp;2</span>
-                  </div>
-                </td>
-                <td>$52</td>
-                <td><i class="fas fa-trash text-red-500"></i></td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
+        <?php if($cart_items != NULL):?>
+          <div class="overflow-x-auto">
+            <table class="w-full text-sm">
+              <thead>
+                <tr class="text-left border-b border-gray-300">
+                  <th class="py-2">Img</th>
+                  <th class="py-2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Name</th>
+                  <th class="py-2">Price</th>
+                  <th class="py-2">Quantity</th>
+                  <th class="py-2">Total</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <?php foreach($cart_items as $item):?>
+                <tbody>
+                  <tr class="border-b border-gray-200">
+                    
+                    <td class="py-3 flex items-center gap-2"><img src="<?= base_url("uploads/".$item['product_img']); ?>" class="w-10 h-10 rounded" /> </td>
+
+                    <td><?= $item['product_name']; ?></td>
+
+                    <td>₹<?= $item['product_price']; ?></td>
+
+                    <td>
+                      <div class="flex items-center gap-2">
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?= $item['quantity']; ?>
+                      </div>
+                    </td>
+
+                    <td class="mx-[50%]">&nbsp;&nbsp;₹<?= ($item['quantity']*$item['product_price']); ?></td>
+
+                    <td><i class="fas fa-trash text-red-500"></i></td>
+                  </tr>
+                </tbody>
+              <?php endforeach; ?>
+            </table>
+          </div>
+        <?php else:?>
+          <div>No Data available</div>
+        <?php endif; ?>
       </div>
 
       <!-- Payment Method & Summary -->
@@ -126,7 +140,7 @@
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 text-center md:text-left">
         <div>
             <h3 class="font-bold mb-2">
-                <img src="wlogo.jpg" alt="Logo" class="h-12 mx-auto md:mx-0">
+                <img src="<?= base_url('wlogo.jpg'); ?>" alt="Logo" class="h-12 mx-auto md:mx-0">
             </h3>
         </div>
         <div>

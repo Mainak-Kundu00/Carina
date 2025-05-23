@@ -76,7 +76,7 @@
 
 <!-- Banner Section -->
 <header class="relative">
-    <img src="ring.webp" alt="Rings Banner" class="w-full h-64 object-cover">
+    <img src="<?= base_url('ring.webp'); ?>" alt="Rings Banner" class="w-full h-64 object-cover">
     <div class="absolute inset-0 bg-black bg-opacity-40 flex flex-col items-center justify-center text-white">
         <h1 class="text-4xl font-bold">Exquisite Rings Collection</h1>
         <p class="text-lg">Discover the timeless elegance and unmatched quality of our rings.</p>
@@ -86,6 +86,13 @@
 <!-- Collection Title -->
 <section class="py-10 text-center">
     <h2 class="text-3xl font-semibold">Ring Collection</h2>
+    <?php  
+      if(session()->getFlashdata('Error') !== NULL):?>
+        <span style="color: red;">
+          <?= session()->getFlashdata('Error'); ?>
+        </span>
+          <br>
+      <?php endif?>
 </section>
 
 <!-- Rings Grid -->

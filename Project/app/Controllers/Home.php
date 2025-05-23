@@ -56,10 +56,15 @@ class Home extends BaseController
 
     public function cart()
     {
-       if(session()->get('user_id') == NULL){
+        $user_id=session()->get('user_id');
+       if( $user_id == NULL ){
             return redirect()->to('sign_in');
-        }
-       return view('cart');
+       }
+       $this->cart=model(Product_model::class);
+       $this->product= model(Admin_model::class);
+       $data = ['cart_items' => $this->cart->get_cart_items($user_id),
+       ];
+       return view('cart',$data);
     }
 
     public function shop_now()

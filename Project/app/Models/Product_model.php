@@ -4,6 +4,8 @@ namespace App\Models;
 use CodeIgniter\Model;
 use Config\Database;
 use CodeIgniter\Database\RawSql;
+use CodeIgniter\Database\BaseBuilder;
+
 
 class Product_model extends Model{
 
@@ -49,24 +51,55 @@ class Product_model extends Model{
             'quantity' => $product_data['quantity'],
             'product_id' => $product_data['product_id'],
         ];
+
         $query=$this->product->select('quantity')
                 ->where('id',$product_data['product_id'])
                 ->get()
                 ->getresult('array');
-        $check=$this->cart->select('id')
+
+        $check=$this->cart
                 ->where('product_id',$product_data['product_id'])
+                ->where('user_id',$product_data['user_id'])
                 ->get()
                 ->getresult('array'); 
-        // if($this->cart->insert($data)){
+              
+        $remaining_quantity=$query[0]['quantity'] - $product_data['quantity'];
 
-        //     $remaining_quantity=$query[0]['quantity'] - $product_data['quantity'];
+        //print_r($check);
+        if($check){
+            $new_quantity=$check[0]['quantity'] + $product_data['quantity'];
 
-        //     $update_quantity=$this->product->set('quantity',$remaining_quantity)
-        //                 ->where('id',$product_data['product_id'])
-        //                 ->update();
+            $this->cart->set('quantity',$new_quantity)
+                        ->where('product_id',$product_data['product_id'])
+                        ->update();
 
-        //     return True;
-        // }
-        print_r(count($check));
+            $this->product->set('quantity',$remaining_quantity)
+                        ->where('id',$product_data['product_id'])
+                        ->update();
+            
+            return True;
+        }else if($this->cart->insert($data)){
+
+            $this->product->set('quantity',$remaining_quantity)
+                        ->where('id',$product_data['product_id'])
+                        ->update();
+
+            return True;
+        }else{
+            return False;
+        }
+        return True;
+        
+    }
+
+    public function get_cart_items($user_id){
+        $query = $this->cart
+                        ->select('cart.quantity, product.product_name, product.product_price, product.product_img')
+                        ->join('product', 'cart.product_id = product.id')
+                        ->where('cart.user_id', $user_id)
+                        ->get()
+                        ->getResultArray();
+
+        return $query;
     }
 }
