@@ -87,6 +87,7 @@
             <br>
       <?php endif?>
         <?php if($cart_items != NULL):?>
+          <?php $total = 0; ?>
           <div class="overflow-x-auto">
             <table class="w-full text-sm">
               <thead>
@@ -108,14 +109,19 @@
                     <td><?= $item['product_name']; ?></td>
 
                     <td>₹<?= $item['product_price']; ?></td>
-
+                    
                     <td>
                       <div class="flex items-center gap-2">
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?= $item['quantity']; ?>
                       </div>
                     </td>
 
-                    <td class="mx-[50%]">&nbsp;&nbsp;₹<?= ($item['quantity']*$item['product_price']); ?></td>
+                    <?php $total_price=($item['quantity']*$item['product_price']);?>
+                    <td class="mx-[50%]">
+                      &nbsp;&nbsp;₹<?= $total_price; ?>
+                    </td>
+
+                    <?php $total+=$total_price; ?>
 
                     <td>
                       <a href="<?= base_url('Delete?product_id='. $item['product_id']);?>">
@@ -129,23 +135,38 @@
               <?php endforeach; ?>
             </table>
           </div>
-        <?php else:?>
-          <div>No Data available</div>
-        <?php endif; ?>
-      </div>
+        </div>
 
       <!-- Payment Method & Summary -->
       <div class="w-full lg:w-1/3 bg-gray-100 rounded-xl p-6">
+
         <h2 class="font-semibold text-lg mb-2"><i class="fas fa-credit-card mr-2"></i>Payment Summary</h2>
+
         <div class="text-sm space-y-2">
-          <div class="flex justify-between"><span>Subtotal</span><span>$180</span></div>
-          <div class="flex justify-between"><span>Discount</span><span class="text-red-500">- $15</span></div>
-          <div class="flex justify-between"><span>Delivery Fee</span><span>$22</span></div>
-          <div class="flex justify-between font-bold border-t pt-2"><span>Total</span><span>$187</span></div>
+
+          <div class="flex justify-between"><span>Subtotal</span>
+          <span>₹<?= $total; ?></span>
+          </div>
+                
+          <div class="flex justify-between"><span>Discount(5%)</span>
+          <span class="text-red-500">- ₹<?= $total*0.05; ?></span>
+          </div>
+
+          <div class="flex justify-between"><span>Delivery Fee</span><span>₹10</span></div>
+
+          <div class="flex justify-between font-bold border-t pt-2"><span>Total</span>
+          <span>₹<?= $total-($total*0.05)+10; ?></span>
+          </div>
+
         </div>
+
         <button class="mt-4 w-full bg-indigo-500 text-white py-2 rounded-lg">Proceed to payment</button>
       </div>
     </div>
+    
+    <?php else:?>
+          <div>No Data available</div>
+        <?php endif; ?>
   </main>
 
 <!-- Footer -->
