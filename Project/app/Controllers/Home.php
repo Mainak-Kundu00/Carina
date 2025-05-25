@@ -28,11 +28,15 @@ class Home extends BaseController
 
     public function necklaces()
     {
-        return view('necklaces');
+        $this->model=model(Product_model::class);
+        $data['necklaces']=$this->model->get_necklaces();
+        return view('necklaces',$data);
     }
 
     public function jewelry()
     {
+        $this->model=model(Product_model::class);
+        $data['jewelry']=$this->model->get_jewelry();
         return view('jewelry');
     }
 
@@ -63,7 +67,6 @@ class Home extends BaseController
        $this->cart=model(Product_model::class);
        $data = ['cart_items' => $this->cart->get_cart_items($user_id),
        ];
-    //    print_r($data);
        return view('cart',$data);
     }
 
@@ -79,14 +82,6 @@ class Home extends BaseController
     public function terms() {
         return view('terms');
     }
-
-    // public function quantity() {
-    //     if(session()->get('user_id') != NULL){
-    //             return view('quantity');
-    //     }else{
-    //         return redirect()->to('');
-    //     }
-    // }
 
     public function Admin_panel() {
         if(session()->get('admin_id') !== NULL){

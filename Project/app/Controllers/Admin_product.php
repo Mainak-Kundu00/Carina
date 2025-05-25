@@ -15,7 +15,7 @@ class Admin_product extends BaseController{
         $rules = [
             'product_name' => ['label' => 'Product name','rules' => 'required|alpha_space|max_length[80]'],
             'product_price' => ['label' => 'Product price','rules' => 'required|numeric|greater_than[0]'],
-            'product_img' => ['label' => 'Image File','rules' => 'uploaded[product_img]|max_size[product_img,40960]|is_image[product_img]|mime_in[product_img,image/jpeg,image/png]'],
+            'product_img' => ['label' => 'Image File','rules' => 'uploaded[product_img]|max_size[product_img,40960]|is_image[product_img]|ext_in[product_img,png,jpg]', 'errors' => ['ext_in' => 'Only JPEG/JPG and PNG Images are allowed.']],
             'product_category' => ['label' => 'Product Category','rules' => 'required'],
             'quantity' => 'required|numeric|greater_than[0]',
           ];

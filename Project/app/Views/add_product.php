@@ -20,7 +20,6 @@
         <input type="text" name="product_price" value="<?= old('product_price') ?>" placeholder="Price" class="px-4 py-2 rounded outline-none">
 
         <label class="font-semibold text-gray-800">PRODUCT IMAGE(MAX 40MB):</label>
-        <!-- <input type="file" name="product_img" value="<?= old('product_img') ?>" class="px-4 py-2 rounded bg-white"> -->
         <span class="px-4 py-2 rounded bg-white">
           <?= form_upload(['name'=>'product_img']); ?>
         </span>

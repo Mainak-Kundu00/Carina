@@ -40,7 +40,7 @@ class Product extends BaseController{
             return redirect()->to('cart');
         }else{
             $this->session->setFlashdata('Error','Something Went Wrong !!! Please try again later');
-            return redirect()->to('rings');
+            return redirect()->back()->withInput();
         }
     }
 

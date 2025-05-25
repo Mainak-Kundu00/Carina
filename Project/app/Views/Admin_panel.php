@@ -10,13 +10,15 @@
 <body>
     <!-- Header -->
       <div class="flex justify-between items-center   flex-wrap gap-2 py-4 px-4">
-        <?php
-              $imageProperties = [
-                  'src'    => 'logo.jpg',
-                  'alt'    => 'Carina',
-                  'width'  => '90'
-              ];
-              echo img($imageProperties);?>  
+        <a href="<?= base_url(''); ?>">
+          <?php
+                $imageProperties = [
+                    'src'    => 'logo.jpg',
+                    'alt'    => 'Carina',
+                    'width'  => '90'
+                ];
+                echo img($imageProperties);?>  
+          </a>
         <div class="flex gap-2">
 
           <a href="<?= base_url('logout');?>">

@@ -29,13 +29,15 @@
         <button id="menu-toggle" class="md:hidden text-gray-700 hover:text-gray-900">
             ☰
         </button>
-        <?php
-            $imageProperties = [
-                'src'    => 'logo.jpg',
-                'alt'    => 'Carina',
-                'width'  => '90'
-            ];
-            echo img($imageProperties);?>   
+        <a href="<?= base_url('Admin_panel'); ?>">
+            <?php
+                $imageProperties = [
+                    'src'    => 'logo.jpg',
+                    'alt'    => 'Carina',
+                    'width'  => '90'
+                ];
+                echo img($imageProperties);?> 
+        </a>  
          </div>
 
     <!-- Desktop Menu -->

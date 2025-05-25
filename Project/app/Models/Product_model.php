@@ -33,6 +33,24 @@ class Product_model extends Model{
         return $query;        
     }
 
+    public function get_jewelry(){
+        $query= $this->product
+                ->where(['product_category'=> 'Jewelry Set'])
+                ->get()
+                ->getresult('array');
+
+        return $query;        
+    }
+
+    public function get_necklaces(){
+        $query= $this->product
+                ->where(['product_category'=> 'Necklace'])
+                ->get()
+                ->getresult('array');
+
+        return $query;        
+    }
+
     public function get_quantity($product_data){
         $query= $this->product->select('quantity')
                     ->where('id',$product_data['product_id'])
@@ -83,10 +101,9 @@ class Product_model extends Model{
                         ->update();
 
             return True;
-        }else{
-            return False;
         }
-        return True;
+        
+        return False;
         
     }
 

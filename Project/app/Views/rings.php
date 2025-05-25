@@ -86,13 +86,6 @@
 <!-- Collection Title -->
 <section class="py-10 text-center">
     <h2 class="text-3xl font-semibold">Ring Collection</h2>
-    <?php  
-      if(session()->getFlashdata('Error') !== NULL):?>
-        <span style="color: red;">
-          <?= session()->getFlashdata('Error'); ?>
-        </span>
-          <br>
-      <?php endif?>
 </section>
 
 <!-- Rings Grid -->

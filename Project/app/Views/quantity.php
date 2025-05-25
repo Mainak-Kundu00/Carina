@@ -16,7 +16,16 @@
           <?= session()->getFlashdata('Out_of_stock'); ?>
         </span>
           <br>
-      <?php endif?>
+    <?php endif?>
+
+    <?php  
+      if(session()->getFlashdata('Error') !== NULL):?>
+        <span style="color: #c1c3c7;">
+          <?= session()->getFlashdata('Error'); ?>
+        </span>
+          <br>
+    <?php endif?>
+
   <?= form_open('');?>    
   <?= form_hidden('product_id',$data['product_id']); ?>
   <?= form_hidden('user_id',session()->get('user_id')); ?>
