@@ -31,6 +31,8 @@ $routes->get('profile_edit', 'Home::profile_edit');
 
 $routes->get('logout', 'Create_user::logout');
 $routes->get('Delete', 'Product::Delete');
+$routes->get('Search', 'Product::Search');
+
 
 
 $routes->post('sign_up', 'Create_user::add_user');

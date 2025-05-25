@@ -58,4 +58,31 @@ class Product extends BaseController{
             return redirect()->to('cart');
         }
     }
+
+    public function Search(){
+        $this->model= model(Product_model::class);
+
+        $query=$this->request->getGet();
+
+       foreach($query as $q){
+        $search=explode(" ",$q);
+       }
+    //    print_r($search);
+       
+       foreach($search as $key){
+
+        if(strtolower($key) === 'rings' or strtolower($key) === 'ring'){
+            return redirect()->to('rings');
+        }
+        else if(strtolower($key) === 'necklaces' or strtolower($key) === 'necklace'){
+            return redirect()->to('necklaces');
+        }
+        else if(strtolower($key) === 'Jewelry set' or strtolower($key) === 'Jewelry' or strtolower($key) === 'set'){
+            return redirect()->to('jewelry');
+        }
+        else{
+            return view('page_not_found');
+        }
+       }
+    }
 }

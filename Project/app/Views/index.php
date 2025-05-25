@@ -17,6 +17,13 @@
             opacity: 0.2;
             z-index: -1;
         }
+        input::-webkit-calendar-picker-indicator {
+        display: none !important;
+        }
+        input[type="text"]::-moz-listbox {
+            display: none !important;
+        }
+
     </style>
 </head>
 <body class="bg-gray-100 relative flex flex-col min-h-screen">
@@ -91,12 +98,20 @@
 
 
     <!-- Search Bar -->
+    <form action="<?= base_url('Search');?>" method="GET">
     <div class="flex justify-center mt-4 px-4">
         <div class="flex items-center bg-white text-black rounded-full px-4 py-2 w-60 sm:w-80 md:w-[500px] lg:w-[600px] shadow-md">
-            <img src="loupe.png" alt="Search" class="w-5 h-5">
-            <input id="search-bar" type="text" placeholder="Search..." class="bg-transparent outline-none px-3 flex-grow text-sm">
+            <img src="<?= base_url('loupe.png'); ?>" alt="Search" class="w-5 h-5">
+            <input list="suggestions" name="search" type="text" placeholder="Search..." class="bg-transparent outline-none px-3 flex-grow text-sm">
         </div>
+        <!-- Custom Dropdown -->
+        <datalist id="suggestions">
+            <option value="Rings">
+            <option value="Necklaces">
+            <option value="Jewelry set">
+        </datalist>
     </div>
+    </form>
     
     <!-- Hero Section -->
     <section class="relative w-full h-[400px] bg-cover bg-center flex flex-col justify-center items-center text-center" style="background-image: url('background.jpg');">
@@ -130,7 +145,7 @@
         <a href="<?= base_url('jewelry'); ?>">
         <div class="bg-white p-4 shadow-md rounded-lg flex flex-col items-center text-center transition-transform transform hover:scale-105 hover:shadow-lg duration-300">
             <img src="kaner.JPG" class="w-full h-72 object-cover rounded-md">
-            <h3 class="font-bold mt-5 text-2xl hover:text-pink-500 transition-colors duration-300">Classic Top</h3>
+            <h3 class="font-bold mt-5 text-2xl hover:text-pink-500 transition-colors duration-300">Classic Set</h3>
         </div>
         </a>
 
@@ -194,14 +209,23 @@
         }
     });
 
-        document.getElementById('search-bar').addEventListener('input', function() {
-            let filter = this.value.toLowerCase();
-            let products = document.querySelectorAll('#product-list > div');
-            products.forEach(product => {
-                let title = product.querySelector('h3').textContent.toLowerCase();
-                product.style.display = title.includes(filter) ? 'block' : 'none';
-            });
-        });
+
     </script>
+
+    <!-- javascript code to be removed -->
+    <!-- document.getElementById("search-bar").addEventListener("focus", function() {
+    document.getElementById("suggestions").classList.remove("hidden");
+});
+
+document.getElementById("search-bar").addEventListener("blur", function() {
+    setTimeout(() => {
+        document.getElementById("suggestions").classList.add("hidden");
+    }, 200); // Delay to allow option selection before hiding
+});
+
+function selectOption(element) {
+    document.getElementById("search-bar").value = element.innerText;
+    document.getElementById("suggestions").classList.add("hidden");
+} -->
 </body>
 </html>

@@ -20,10 +20,6 @@ class Product_model extends Model{
         $this->db->connect();
     }
 
-    public function hello(){
-        echo "category page";
-    }
-
     public function get_rings(){
         $query= $this->product
                 ->where(['product_category'=> 'Ring'])
@@ -147,4 +143,5 @@ class Product_model extends Model{
             return False;
         }
     }
+
 }

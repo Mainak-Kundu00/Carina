@@ -79,7 +79,7 @@
 
     <!-- Banner Section -->
     <header class="relative">
-        <img src="necklace.jpg" alt="Rings Banner" class="w-full h-64 object-cover">
+        <img src="<?= base_url('necklace.jpg'); ?>" alt="Rings Banner" class="w-full h-64 object-cover">
         <div class="absolute inset-0 bg-black bg-opacity-40 flex flex-col items-center justify-center text-white">
             <h1 class="text-4xl font-bold">Unique Necklace Collection</h1>
             <p class="text-lg">Discover the timeless royalty and uncomparable quality of our necklaces.</p>
