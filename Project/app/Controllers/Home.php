@@ -37,7 +37,8 @@ class Home extends BaseController
     {
         $this->model=model(Product_model::class);
         $data['jewelry']=$this->model->get_jewelry();
-        return view('jewelry');
+        //print_r($data);
+        return view('jewelry',$data);
     }
 
     public function sign_up()

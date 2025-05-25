@@ -92,56 +92,34 @@
     </section>
     
     <!-- Necklace Grid -->
-    <section class="container mx-auto px-4 pb-16">
-        <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-6 justify-center">
-        <div class="bg-white rounded-lg shadow-md overflow-hidden transform transition duration-300 hover:scale-105">
-            <img src="silver-set.webp" alt="Royal Diamond Ring" class="w-full h-48 object-cover">
-            <div class="p-4">
-                <p class="text-sm text-white bg-gray-500 rounded-full px-3 py-1 uppercase inline-block">Set</p>
-                <h3 class="text-lg font-semibold mt-2">Elegant silver</h3>
-                <p class="text-gray-600 text-sm">₹30,000</p>
-                <a href="<?= base_url('quantity')?>"> 
-                    <button class="mt-2 bg-purple-600 text-white px-4 py-2 rounded hover:bg-purple-700 hover:shadow-lg">Add to cart</button>
-                </a>            
-            </div>
-        </div>
-        
-        <div class="bg-white rounded-lg shadow-md overflow-hidden transform transition duration-300 hover:scale-105">
-            <img src="gold-set.png" alt="Ethenic Gold Ring" class="w-full h-48 object-cover">
-            <div class="p-4">
-                <p class="text-sm text-white bg-gray-500 rounded-full px-3 py-1 uppercase inline-block">Set</p>
-                <h3 class="text-lg font-semibold mt-2">Stylish Gold</h3>
-                <p class="text-gray-600 text-sm">₹45,999</p>
-                <a href="<?= base_url('quantity')?>"> 
-                    <button class="mt-2 bg-purple-600 text-white px-4 py-2 rounded hover:bg-purple-700 hover:shadow-lg">Add to cart</button>
-                </a>            
-            </div>
-        </div>
-        
-        <div class="bg-white rounded-lg shadow-md overflow-hidden transform transition duration-300 hover:scale-105">
-            <img src="diamond-set.webp" alt="Classic diamond-necklace" class="w-full h-48 object-cover">
-            <div class="p-4">
-                <p class="text-sm text-white bg-gray-500 rounded-full px-3 py-1 uppercase inline-block">Set</p>
-                <h3 class="text-lg font-semibold mt-2">Premium Diamond</h3>
-                <p class="text-gray-600 text-sm">₹35,999</p>
-                <a href="<?= base_url('quantity')?>"> 
-                    <button class="mt-2 bg-purple-600 text-white px-4 py-2 rounded hover:bg-purple-700 hover:shadow-lg">Add to cart</button>
-                </a>
-            </div>
-        </div>
-        
-        <div class="bg-white rounded-lg shadow-md overflow-hidden transform transition duration-300 hover:scale-105">
-            <img src="platinum-set.jpg" alt="Elegant Platinum necklace" class="w-full h-48 object-cover">
-            <div class="p-4">
-                <p class="text-sm text-white bg-gray-500 rounded-full px-3 py-1 uppercase inline-block">Set</p>
-                <h3 class="text-lg font-semibold mt-2">Mighty Platinum</h3>
-                <p class="text-gray-600 text-sm">₹25,000</p>
-                <a href="<?= base_url('quantity')?>"> 
-                    <button class="mt-2 bg-purple-600 text-white px-4 py-2 rounded hover:bg-purple-700 hover:shadow-lg">Add to cart</button>
-                </a>            
-            </div>
-        </div>
-    </section>
+<section class="container mx-auto px-4 pb-16">
+    <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-6 justify-center">
+        <?php foreach($jewelry as $item):?>
+          
+            <div class="bg-white rounded-lg shadow-md overflow-hidden transform transition duration-300 hover:scale-105">
+
+                <img src="<?= base_url("uploads/".$item['product_img']); ?>" alt="Royal Diamond Ring" class="w-full h-48 object-cover">
+                <div class="p-4">
+
+                    <p class="text-sm text-white bg-gray-500 rounded-full px-3 py-1 uppercase inline-block"><?= $item['product_category'];?></p>
+                    <h3 class="text-lg font-semibold mt-2"><?= $item['product_name'];?></h3>
+
+                    <span class="text-gray-600 text-sm"><?= $item['quantity'];?> left</span>
+
+                    <p class="text-gray-600 text-sm">₹<?= $item['product_price'];?></p>
+
+                    <?php if($item['quantity'] > 0):?>
+                    <a href="<?= base_url('quantity?product_id='. $item['id'])?>"> 
+                        <button type="submit" class="mt-2 bg-purple-600 text-white px-4 py-2 rounded hover:bg-purple-700 hover:shadow-lg">Add to cart</button>
+                    </a>
+                    <?php else:?>
+                        <button type="submit" class="mt-2 bg-purple-600 text-white px-4 py-2 rounded hover:bg-purple-700 hover:shadow-lg">Out of Stock</button>
+                    <?php endif; ?>
+                </div>
+            </div> 
+        <?php endforeach ?>
+    </div>
+</section>
     
     <!-- Hamburger Menu Functionality -->
     <script>
