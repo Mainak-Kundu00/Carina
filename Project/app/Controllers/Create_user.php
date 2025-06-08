@@ -115,9 +115,13 @@ class Create_user extends BaseController{
         }
     }
 
-    public function logout(){
-        //echo"logout";
-        $this->session->destroy();
+    public function user_logout(){
+        $this->session->remove('user_id');
+        return redirect()->to('');
+    }
+
+    public function admin_logout(){
+        $this->session->remove('admin_id');
         return redirect()->to('');
     }
 

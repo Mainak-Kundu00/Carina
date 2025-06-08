@@ -126,4 +126,7 @@ class Home extends BaseController
     public function profile_edit() {
         return view('profile_edit');
     }
+    public function payment_page() {
+        return view('payment_page');
+    }
 }

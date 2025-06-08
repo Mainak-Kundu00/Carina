@@ -102,7 +102,6 @@
     
     <div class="flex items-center justify-center h-screen overflow-hidden">
         <img src="<?= base_url('page_not_found.png'); ?>" alt="Result not found...." class="h-[70%] ">
-        <!-- <p class="text-gray-500 text-lg font-semibold">No Search Results Found</p> -->
     </div>
 
  <footer class="bg-gray-900 text-white p-8 mt-auto ">

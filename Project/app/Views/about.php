@@ -95,21 +95,21 @@
             <h2 class="text-3xl font-bold text-gray-800 mb-6">Our Values</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8 px-4">
                 <div>
-                    <img src="gold_ring.jpg" alt="Quality" class="h-20 mx-auto mb-4">
+                    <img src="<?= base_url('gold_ring.jpg'); ?>" alt="Quality" class="h-20 mx-auto mb-4">
                     <h3 class="text-lg font-semibold text-gray-700">Uncompromising Quality</h3>
                     <p class="text-gray-600 text-sm">
                         We take pride in delivering the finest jewelry, designed and crafted with the utmost care and attention to detail.
                     </p>
                 </div>
                 <div>
-                    <img src="silver_necklace.jpg" alt="Affordability" class="h-20 mx-auto mb-4">
+                    <img src="<?= base_url('silver_necklace.jpg'); ?>" alt="Affordability" class="h-20 mx-auto mb-4">
                     <h3 class="text-lg font-semibold text-gray-700">Affordability</h3>
                     <p class="text-gray-600 text-sm">
                         Our goal is to make luxury accessible. We strive to provide premium jewelry at prices that fit your budget.
                     </p>
                 </div>
                 <div>
-                    <img src="diamond_set.webp" alt="Design" class="h-20 mx-auto mb-4">
+                    <img src="<?= base_url('diamond_set.jpg'); ?>" alt="Design" class="h-20 mx-auto mb-4">
                     <h3 class="text-lg font-semibold text-gray-700">Innovative Designs</h3>
                     <p class="text-gray-600 text-sm">
                         We blend timeless elegance with modern trends to create designs that resonate with every individual.
@@ -127,8 +127,8 @@
                 Have questions or need assistance? We'd love to hear from you. Contact us at:
             </p>
             <p class="text-blue-600 text-lg mt-4">
-                <strong>Email:</strong> support@Carina.com <br>
-                <strong>Phone:</strong> +123 456 7890
+                <a href="mailto:support@Carina.com"><strong>Email:</strong> support@Carina.com </a><br>
+                <strong>Phone:</strong> +91 62895 49625
             </p>
         </div>
     </section>

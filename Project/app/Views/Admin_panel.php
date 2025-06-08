@@ -20,8 +20,7 @@
                 echo img($imageProperties);?>  
           </a>
         <div class="flex gap-2">
-
-          <a href="<?= base_url('logout');?>">
+        <a href="<?= base_url('admin_logout');?>">
           <button class="bg-red-100 text-red-700 px-4 py-1 rounded-md text-sm hover:bg-red-200 whitespace-nowrap">
             ⎋ Logout
           </button>
@@ -44,9 +43,7 @@
       <a href="<?= base_url('update_product');?>">
         <button class="bg-blue-600 text-white px-5 py-2 rounded hover:bg-blue-700 transition">Update Item</button>
       </a>
-      <!-- <a href="<?= base_url('ordered_product');?>">
-        <button class="bg-blue-600 text-white px-5 py-2 rounded hover:bg-blue-700 transition">Orders</button>
-      </a> -->
+
     </div>
     
 

@@ -19,7 +19,6 @@ $routes->get('shop_now', 'Home::shop_now');
 $routes->get('shop_now', 'Home::shop_now');
 $routes->get('our_policy', 'Home::policy');
 $routes->get('terms', 'Home::terms');
-// $routes->get('quantity', 'Home::quantity');
 $routes->get('quantity', 'Product::quantity');
 $routes->get('Admin_panel', 'Home::Admin_panel');
 $routes->get('add_product', 'Home::add_product');
@@ -28,8 +27,11 @@ $routes->get('ordered_product', 'Home::ordered_product');
 $routes->get('update_product', 'Home::update_product');
 $routes->get('profile', 'Home::profile');
 $routes->get('profile_edit', 'Home::profile_edit');
+$routes->get('payment_page', 'Home::payment_page');
 
-$routes->get('logout', 'Create_user::logout');
+
+$routes->get('user_logout', 'Create_user::user_logout');
+$routes->get('admin_logout', 'Create_user::admin_logout');
 $routes->get('Delete', 'Product::Delete');
 $routes->get('Search', 'Product::Search');
 
@@ -41,7 +43,6 @@ $routes->post('add_product', 'Admin_product::index');
 $routes->post('delete_product', 'Admin_product::delete');
 $routes->post('update_product', 'Admin_product::update');
 $routes->post('profile_edit', 'Create_user::update_user');
-//$routes->post('rings', 'Product::quantity');
 $routes->post('quantity', 'Product::product_data');
 
 

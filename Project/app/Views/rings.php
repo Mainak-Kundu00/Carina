@@ -102,7 +102,7 @@
                     <h3 class="text-lg font-semibold mt-2"><?= $item['product_name'];?></h3>
 
                     <span class="text-gray-600 text-sm"><?= $item['quantity'];?> left</span>
-
+ 
                     <p class="text-gray-600 text-sm">₹<?= $item['product_price'];?></p>
 
                     <?php if($item['quantity'] > 0):?>

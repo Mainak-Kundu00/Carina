@@ -160,7 +160,11 @@
 
         </div>
 
-        <button class="mt-4 w-full bg-indigo-500 text-white py-2 rounded-lg">Proceed to payment</button>
+        <a href="<?= base_url('payment_page');?>">
+            <button class="mt-4 w-full bg-indigo-500 text-white py-2 rounded-lg">    Proceed to payment
+            </button>
+        </a>
+        
       </div>
     </div>
     
@@ -188,11 +192,11 @@
         <div>
             <h3 class="font-bold mb-2">Contact Us</h3>
             <p class="text-sm">Email: support@Carina.com</p>
-            <p class="text-sm">Phone: +123 456 7890</p>
+            <p class="text-sm">Phone: +91 62895 49625</p>
         </div>
         <div>
             <h3 class="font-bold mb-2">Address</h3>
-            <p class="text-sm">123 Jewelry St, NY, USA</p>
+            <p class="text-sm">123 Jewelry St, KOLKATA, INDIA</p>
         </div>
     </div>
     <div class="text-center text-sm text-gray-400 mt-6 border-t border-gray-700 pt-4">

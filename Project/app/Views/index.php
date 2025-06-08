@@ -130,14 +130,14 @@
     <div id="product-list" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 px-10 mb-16">
         <div class="bg-white p-4 shadow-md rounded-lg flex flex-col items-center text-center transition-transform transform hover:scale-105 hover:shadow-lg duration-300">
             <a href="<?= base_url('rings'); ?>">
-                <img src="gold_ring.jpg" class="w-full h-72 object-cover rounded-md">
+                <img src="<?= base_url('engagement-rings-diamond_og.jpg');?>" class="w-full h-72 object-cover rounded-md">
                 <h3 class="font-bold mt-5 text-2xl hover:text-pink-500 transition-colors duration-300">Ring</h3>
             </a>
         </div>
         
         <a href="<?= base_url('necklaces'); ?>">
             <div class="bg-white p-4 shadow-md rounded-lg flex flex-col items-center text-center transition-transform transform hover:scale-105 hover:shadow-lg duration-300">
-                <img src="chain.JPG" class="w-full h-72 object-cover rounded-md">
+                <img src="<?= base_url('chain.JPG');?>" class="w-full h-72 object-cover rounded-md">
                 <h3 class="font-bold mt-5 text-2xl hover:text-pink-500 transition-colors duration-300">Chain</h3>
             </div>
          </a>
@@ -153,13 +153,13 @@
     
     <!-- Footer -->
 <footer class="bg-gray-900 text-white p-8 mt-auto">
-            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 text-center md:text-left">
-                <div>
-                    <h3 class="font-bold mb-2">
-                        <img src="wlogo.jpg" alt="Logo" class="h-12 mx-auto md:mx-0">
-                    </h3>
-                </div>
-                <div>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 text-center md:text-left">
+        <div>
+            <h3 class="font-bold mb-2">
+                <img src="<?= base_url('wlogo.jpg'); ?>" alt="Logo" class="h-12 mx-auto md:mx-0">
+            </h3>
+        </div>
+        <div>
                     <h3 class="font-bold mb-2">Our Policy</h3>
                     <ul class="space-y-1">
                         <li><a href="<?= base_url('our_policy'); ?>" class="hover:text-gray-400">Refunds</a></li>
@@ -167,19 +167,19 @@
                         <li><a href="<?= base_url('our_policy'); ?>" class="hover:text-gray-400">Return & Exchange</a></li>
                       </ul>
                 </div>
-                <div>
-                    <h3 class="font-bold mb-2">Contact Us</h3>
-                    <p class="text-sm">Email: support@Carina.com</p>
-                    <p class="text-sm">Phone: +91 62896 34086</p>
-                </div>
-                <div>
-                    <h3 class="font-bold mb-2">Address</h3>
-                    <p class="text-sm"> 129, Belilious Rd, Howrah, India</p>
-                </div>
-            </div>
-            <div class="text-center text-sm text-gray-400 mt-6 border-t border-gray-700 pt-4">
-                &copy; 2025 Carina Jewelry. All rights reserved.
-            </div>
+        <div>
+            <h3 class="font-bold mb-2">Contact Us</h3>
+            <p class="text-sm">Email: support@Carina.com</p>
+            <p class="text-sm">Phone: +91 62895 49625</p>
+        </div>
+        <div>
+            <h3 class="font-bold mb-2">Address</h3>
+            <p class="text-sm">123 Jewelry St, KOLKATA, INDIA</p>
+        </div>
+    </div>
+    <div class="text-center text-sm text-gray-400 mt-6 border-t border-gray-700 pt-4">
+        &copy; 2025 Carina Jewelry. All rights reserved.
+    </div>
 </footer>
     
     <!--Search Bar Functionality-->
@@ -212,20 +212,5 @@
 
     </script>
 
-    <!-- javascript code to be removed -->
-    <!-- document.getElementById("search-bar").addEventListener("focus", function() {
-    document.getElementById("suggestions").classList.remove("hidden");
-});
-
-document.getElementById("search-bar").addEventListener("blur", function() {
-    setTimeout(() => {
-        document.getElementById("suggestions").classList.add("hidden");
-    }, 200); // Delay to allow option selection before hiding
-});
-
-function selectOption(element) {
-    document.getElementById("search-bar").value = element.innerText;
-    document.getElementById("suggestions").classList.add("hidden");
-} -->
 </body>
 </html>

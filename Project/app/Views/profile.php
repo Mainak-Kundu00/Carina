@@ -25,7 +25,7 @@
             ✎ Edit
           </button>
         </a>
-        <a href="<?= base_url('logout');?>">
+        <a href="<?= base_url('user_logout');?>"> 
           <button class="bg-red-100 text-red-700 px-4 py-1 rounded-md text-sm hover:bg-red-200 whitespace-nowrap">
             ⎋ Logout
           </button>
