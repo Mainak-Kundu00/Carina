@@ -69,9 +69,10 @@ class Create_user extends BaseController{
             // print_r($user_data);
         //   }
            
-        
+        //  print_r($user_data['password']);
+        //  echo"<br>";
          if( $this->model->add_user($user_data) ){
-            //  echo "Data added";
+            //   echo "Data added";
             $this->session->setFlashdata('account_create','Account Created Succesfully!! You can login Now');            
          }
         else{
@@ -104,28 +105,31 @@ class Create_user extends BaseController{
         $password='20sa4'. $logged_user['password'];
         // $hash = password_hash($password, PASSWORD_DEFAULT);
         // $password = $hash;
-        // $admin_id=$this->model->admin_login($email,$password);
-        print_r($logged_user);
-        print_r($password);
-        echo"<br>";
-        // $user_id=
-          $this->model->user_login($email,$password);
+
+        //////////////// remaining work : Hash is working fine . admin password need to be corrected /////////////
+
+
+        $admin_id=$this->model->admin_login($email,$password);
+        // print_r($logged_user);
+        // print_r($password);
+        // echo"<br>";
+        $user_id=$this->model->user_login($email,$password);
         
-        // if($admin_id){
-        //     //echo "Admin logged in";
-        //     $this->session->set('admin_id',$admin_id);
-        //     return redirect()->to('Admin_panel');
-        // }
-        // else if($user_id){
-        //     //echo "admin not logged in but user is";           
-        //     $this->session->set('user_id',$user_id);
-        //     return redirect()->to('');
-        // }
-        // else{
-        //     //echo "nobody logged in";
-        //     $this->session->setFlashdata('no_user','No record found. Please sign up first!!');
-        //     return redirect()->back()->withInput();
-        // }
+        if($admin_id){
+            //echo "Admin logged in";
+            $this->session->set('admin_id',$admin_id);
+            return redirect()->to('Admin_panel');
+        }
+        else if($user_id){
+            //echo "admin not logged in but user is";           
+            $this->session->set('user_id',$user_id);
+            return redirect()->to('');
+        }
+        else{
+            //echo "nobody logged in";
+            $this->session->setFlashdata('no_user','No record found. Please sign up first!!');
+            return redirect()->back()->withInput();
+        }
     }
 
     public function user_logout(){

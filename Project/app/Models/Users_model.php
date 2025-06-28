@@ -24,23 +24,16 @@ class Users_model extends Model{
                 ->where(['email'=>$email])
                 ->get()
                 ->getresult('array');
-        
-        $hash=$query[0]['password'];
-        if(password_verify($password, $hash));
-        {
-          print_r($hash);
-          print_r($password);
-        }
-
-//////////////// remaining work : Hash is working fine . now just have to correctly connect the model and controller /////////////
 
         //   echo count($query);
-        // if(count($query)){
-        //     return $query[0]['id'];
-        // }
-        // else{
-        //     return False;
-        // }
+        if(count($query)){
+            if( password_verify($password, $query[0]['password'])){
+                return $query[0]['id'];
+            }
+        }
+        else{
+            return False;
+        }
     }
 
     public function admin_login($email,$password){
@@ -85,6 +78,7 @@ class Users_model extends Model{
         if(count($query)){
             return False;
         }else if($this->users->insert($data)) {
+            // print_r($user_data['password']);
             return True;
         }
         
