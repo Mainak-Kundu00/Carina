@@ -20,19 +20,27 @@ class Users_model extends Model{
     }
 
     public function user_login($email,$password){
-         $query= $this->users->select('id')
-                ->where(['email'=>$email,'password'=>$password])
+         $query= $this->users->select('id,password')
+                ->where(['email'=>$email])
                 ->get()
                 ->getresult('array');
         
-        //  print_r($query);
+        $hash=$query[0]['password'];
+        if(password_verify($password, $hash));
+        {
+          print_r($hash);
+          print_r($password);
+        }
+
+//////////////// remaining work : Hash is working fine . now just have to correctly connect the model and controller /////////////
+
         //   echo count($query);
-        if(count($query)){
-            return $query[0]['id'];
-        }
-        else{
-            return False;
-        }
+        // if(count($query)){
+        //     return $query[0]['id'];
+        // }
+        // else{
+        //     return False;
+        // }
     }
 
     public function admin_login($email,$password){
@@ -64,7 +72,10 @@ class Users_model extends Model{
             'ph_no' => $user_data['ph_no'],
             'password' => $user_data['password'],
         ];
-        //print_r($data);
+        // $data = [
+        //     'password' => $user_data['password'],
+        // ];
+        // print_r($data);
         //checks if the email already exists
         $query= $this->users->select('id')
                 ->where(['email'=>$user_data['email']])
@@ -73,9 +84,10 @@ class Users_model extends Model{
 
         if(count($query)){
             return False;
-        }else if($this->users->insert($data)){
+        }else if($this->users->insert($data)) {
             return True;
         }
+        
 
     }
 

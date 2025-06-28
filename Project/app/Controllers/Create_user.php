@@ -42,9 +42,9 @@ class Create_user extends BaseController{
         
     }
 
-    public function add_user(){
-       // echo "sign up";
-        $this->model=model(Users_model::class);
+     public function add_user(){
+    //    // echo "sign up";
+         $this->model=model(Users_model::class);
 
         $rules = [
             'name' => 'required|alpha_space|max_length[40]',
@@ -56,23 +56,32 @@ class Create_user extends BaseController{
             'password' => 'required|max_length[12]|min_length[6]',
             'Confirm_password' => ['label' => 'Confirm password','rules' => 'required|matches[password]'],
         ];
+
         $user_data=$this->request->getPost(array_keys($rules));
         if (! $this->validateData($user_data, $rules)) {
             return redirect()->back()->withInput();
         }
-        //print_r($user_data);
+
+     $pass = '20sa4'. $user_data['password'];
+     $hash = password_hash($pass, PASSWORD_DEFAULT);
+     $user_data['password'] = $hash;
+        //   if(password_verify($pass, $hash)){
+            // print_r($user_data);
+        //   }
+           
         
-        if($this->model->add_user($user_data)){
-            //echo "Data added";
-            $this->session->setFlashdata('account_create','Account Created Succesfully');            
-        }else{
-           // echo "Not added";
+         if( $this->model->add_user($user_data) ){
+            //  echo "Data added";
+            $this->session->setFlashdata('account_create','Account Created Succesfully!! You can login Now');            
+         }
+        else{
+        //    echo "Not added";
            $this->session->setFlashdata('account_create_failed','Email Already Exists!!! Please Use Different Email...');
            return redirect()->back()->withInput();
         }
         return view('sign_up');
 
-    }
+     }
 
     public function login(){
         //echo "login";
@@ -91,28 +100,32 @@ class Create_user extends BaseController{
         //print_r($logged_user);
 
         $email=$logged_user['email'];
-        $password=$logged_user['password'];
-        $admin_id=$this->model->admin_login($email,$password);
-        $user_id=$this->model->user_login($email,$password);
         
-        if($admin_id){
-            //echo "Admin logged in";
-            $this->session->set('admin_id',$admin_id);
-            return redirect()->to('Admin_panel');
-        }
-        else if($user_id){
-            //echo "admin not logged in but user is";
-            // if(session()->get('user_id') !== NULL){
-            //     return redirect()->to('');
-            // }             
-            $this->session->set('user_id',$user_id);
-            return redirect()->to('');
-        }
-        else{
-            //echo "nobody logged in";
-            $this->session->setFlashdata('no_user','No record found. Please sign up first!!');
-            return redirect()->back()->withInput();
-        }
+        $password='20sa4'. $logged_user['password'];
+        // $hash = password_hash($password, PASSWORD_DEFAULT);
+        // $password = $hash;
+        // $admin_id=$this->model->admin_login($email,$password);
+        print_r($logged_user);
+        print_r($password);
+        echo"<br>";
+        // $user_id=
+          $this->model->user_login($email,$password);
+        
+        // if($admin_id){
+        //     //echo "Admin logged in";
+        //     $this->session->set('admin_id',$admin_id);
+        //     return redirect()->to('Admin_panel');
+        // }
+        // else if($user_id){
+        //     //echo "admin not logged in but user is";           
+        //     $this->session->set('user_id',$user_id);
+        //     return redirect()->to('');
+        // }
+        // else{
+        //     //echo "nobody logged in";
+        //     $this->session->setFlashdata('no_user','No record found. Please sign up first!!');
+        //     return redirect()->back()->withInput();
+        // }
     }
 
     public function user_logout(){
