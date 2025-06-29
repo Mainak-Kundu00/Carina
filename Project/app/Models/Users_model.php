@@ -37,16 +37,19 @@ class Users_model extends Model{
     }
 
     public function admin_login($email,$password){
-         $query= $this->admin->select('id')
-                ->where(['email'=>$email,'password'=>$password])
+         $query= $this->admin->select('id,password')
+                ->where(['email'=>$email])
                 ->get()
                 ->getresult('array');
         
-        //print_r($query);
+        //  print_r($query);
          //print_r($query[0]['id']);
           //echo count($query);
+
         if(count($query)){
-            return $query[0]['id'];
+            if( password_verify($password, $query[0]['password'])){
+                return $query[0]['id'];
+            }
         }
         else{
             return False;

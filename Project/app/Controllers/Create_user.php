@@ -42,8 +42,8 @@ class Create_user extends BaseController{
         
     }
 
-     public function add_user(){
-    //    // echo "sign up";
+    public function add_user(){
+         // echo "sign up";
          $this->model=model(Users_model::class);
 
         $rules = [
@@ -62,19 +62,17 @@ class Create_user extends BaseController{
             return redirect()->back()->withInput();
         }
 
-     $pass = '20sa4'. $user_data['password'];
-     $hash = password_hash($pass, PASSWORD_DEFAULT);
-     $user_data['password'] = $hash;
-        //   if(password_verify($pass, $hash)){
-            // print_r($user_data);
-        //   }
-           
-        //  print_r($user_data['password']);
+        $pass = '20sa4'. $user_data['password'];
+        $hash = password_hash($pass, PASSWORD_DEFAULT);
+        $user_data['password'] = $hash;
+        
+        // print_r($user_data);
         //  echo"<br>";
-         if( $this->model->add_user($user_data) ){
+
+        if( $this->model->add_user($user_data) ){
             //   echo "Data added";
             $this->session->setFlashdata('account_create','Account Created Succesfully!! You can login Now');            
-         }
+        }
         else{
         //    echo "Not added";
            $this->session->setFlashdata('account_create_failed','Email Already Exists!!! Please Use Different Email...');
@@ -82,7 +80,7 @@ class Create_user extends BaseController{
         }
         return view('sign_up');
 
-     }
+    }
 
     public function login(){
         //echo "login";
@@ -101,18 +99,9 @@ class Create_user extends BaseController{
         //print_r($logged_user);
 
         $email=$logged_user['email'];
-        
         $password='20sa4'. $logged_user['password'];
-        // $hash = password_hash($password, PASSWORD_DEFAULT);
-        // $password = $hash;
-
-        //////////////// remaining work : Hash is working fine . admin password need to be corrected /////////////
-
 
         $admin_id=$this->model->admin_login($email,$password);
-        // print_r($logged_user);
-        // print_r($password);
-        // echo"<br>";
         $user_id=$this->model->user_login($email,$password);
         
         if($admin_id){
