@@ -124,7 +124,13 @@ class Home extends BaseController
     }
 
     public function profile_edit() {
-        return view('profile_edit');
+         $this->model=model(Users_model::class);
+
+         $user_id=session()->get('user_id');
+         $user_data['user_data']=$this->model->get_user($user_id);
+
+         return view('profile_edit',$user_data);
+        //return view('profile_edit');
     }
     public function payment_page() {
         return view('payment_page');

@@ -24,15 +24,16 @@
 
     <!-- Form -->
     <?= form_open('');?>
+     <?php foreach($user_data as $user):?>
       <div class="p-6 sm:p-8 bg-blue-50 rounded-b-xl space-y-5">
         <div>
           <label class="block text-sm font-semibold text-indigo-700 mb-1" for="name">Name</label>
-          <input type="text" id="name" name="name" value="<?= old('name') ?>"   placeholder="Enter your name" class="w-full px-4 py-2 border border-indigo-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-400" />
+          <input type="text" id="name" name="name" value="<?= $user['name']; ?>"   placeholder="Enter your name" class="w-full px-4 py-2 border border-indigo-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-400" />
         </div>
 
         <div>
           <label class="block text-sm font-semibold text-indigo-700 mb-1" for="gender">Gender</label>
-          <select id="gender" name="gender" value="<?= old('gender') ?>"   class="w-full px-4 py-2 border border-indigo-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-400">
+          <select id="gender" name="gender" value="<?= $user['gender']; ?>"   class="w-full px-4 py-2 border border-indigo-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-400">
             <?php 
               $gender=array("Male","Female","Other");
               foreach($gender as $g): ?>   
@@ -43,23 +44,25 @@
 
         <div>
           <label class="block text-sm font-semibold text-indigo-700 mb-1" for="dob">D.O.B</label>
-          <input type="date" id="dob" name="dob" value="<?= old('dob') ?>"   class="w-full px-4 py-2 border border-indigo-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-400" />
+          <input type="date" id="dob" name="dob" value="<?= $user['dob']; ?>"   class="w-full px-4 py-2 border border-indigo-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-400" />
         </div>
 
         <div>
           <label class="block text-sm font-semibold text-indigo-700 mb-1" for="ph_no">Phone</label>
-          <input type="tel" id="ph_no" name="ph_no" value="<?= old('ph_no') ?>"   placeholder="+91-" class="w-full px-4 py-2 border border-indigo-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-400" />
+          <input type="tel" id="ph_no" name="ph_no" value="<?= $user['ph_no']; ?>"   placeholder="+91-" class="w-full px-4 py-2 border border-indigo-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-400" />
         </div>
 
         <div class="relative">
           <label class="block text-sm font-semibold text-indigo-700 mb-1" for="address">Address</label>
-          <input type="text" name="address" value="<?= old('address') ?>" placeholder="Address" class="w-full px-4 py-2 border border-indigo-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-400">
+          <input type="text" name="address" value="<?= $user['address']; ?>" placeholder="Address" class="w-full px-4 py-2 border border-indigo-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-400">
         </div>
 
         <div>
           <label class="block text-sm font-semibold text-indigo-700 mb-1" for="email">Email</label>
-          <input type="email" id="email" name="email" value="<?= old('email') ?>"   placeholder="your@email.com" class="w-full px-4 py-2 border border-indigo-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-400" />
+          <input type="email" id="email" name="email" value="<?= $user['email']; ?>"   placeholder="your@email.com" class="w-full px-4 py-2 border border-indigo-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-400" />
         </div>
+
+        <?php endforeach ?>
         
         <div style="color: red;">
           <?= validation_list_errors() ?>
